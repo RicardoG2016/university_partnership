@@ -1,0 +1,21 @@
+
+<p>
+  <strong>University</strong><br>
+  <%= @group.university.downcase %>
+</p>
+ 
+ <p>
+  <strong>Phone</strong><br>
+  <%= @group.phone %>
+</p>
+<p>
+  <strong>Email</strong><br>
+  <%= @group.email.downcase %>
+</p>
+<p>
+  <strong>Point of Contact</strong><br>
+  <%= @group.president %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

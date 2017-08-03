@@ -1,0 +1,27 @@
+<h1>Current University Partners</h1>
+ 
+<table>
+  <tr>
+    <th>University</th>
+    <th>President</th>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+ 
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.university %></td>
+      <td><%= group.president %></td>
+      <td><%= group.email %></td>
+      <td><%= group.phone %></td>
+      <td><%= link_to 'Show', group_path(group) %></td>
+      <td><%= link_to 'Edit', edit_group_path(group) %></td>
+      <td><%= link_to 'Delete', group_path(group),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } 
+      %></td>
+      
+    </tr>
+  <% end %>
+  <hr>
+</table>

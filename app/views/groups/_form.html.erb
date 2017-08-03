@@ -1,0 +1,48 @@
+ <%= form_for(@group) do |g| %>
+ 
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@group.errors.count, "error") %> prohibited
+        this group from being saved:
+      </h2>
+      <ul>
+        <% @group.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+<p>
+  <%= g.label :university %><br>
+  <%= g.text_field :university %>
+</p>
+<hr>
+<p>
+  <%= g.label :email %><br>
+  <%= g.email_field :email %>
+</p>
+<p>
+  <%= g.label :password %><br>
+  <%= g.password_field :password %>
+</p>
+<p>
+  <%= g.label :phone %><br>
+  <%= g.telephone_field :phone %>
+</p>
+<p>
+  <%= g.label :president %><br>
+  <%= g.text_field :president %>
+</p>
+<p>
+  <%= g.label :member_count %><br>
+  <%= g.number_field :member_count %>
+</p>
+ 
+  <p>
+    <%= g.submit %>
+  </p>
+ 
+<% end %>
+ 
