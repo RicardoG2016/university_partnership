@@ -1,3 +1,44 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.posts {
+  padding: 10px;
+  margin: 2% auto;
+  border: solid 1px #e0e0e0;
+  border-radius: 2px;
+  width: 50%;
+}
+
+.posts img {
+  width: 100%;
+}
+
+.thumb {
+  padding: 5px !important;
+}
+
+.post-text, .post-title {
+  padding: 10px;
+  text-align: left;
+}
+
+.edit-icons {
+  display: none;
+  float: right;
+}
+
+.edit-icon {
+  color: #757575;
+  text-decoration: none;
+  padding-right: 0 !important;
+}
+
+div.posts.col-md-7:hover {
+  
+  .edit-icons {
+    display: inline;
+    float: right;
+  }
+  
+}

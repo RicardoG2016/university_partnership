@@ -33,7 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# custome
+# custom
+gem 'jquery-rails'
+gem 'pry-rails', :group => :development
+gem 'font-awesome-sass', '~> 4.7.0'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'devise', '4.3'
 
 
 group :development, :test do

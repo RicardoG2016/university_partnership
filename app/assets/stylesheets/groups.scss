@@ -1,3 +1,54 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.event-card {
+  height: 250px;
+}
+
+.event-title {
+  padding: 5px; 
+  font-size: 21px;
+  height: 70px;
+}
+
+h4.event-title.card-title {
+  overflow-y: scroll;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.event-text {
+  font-size: 15px;
+  text-align: left;
+}
+
+p.event-text {
+  overflow-y: scroll;
+  white-space: nowrap;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.event-header {
+  text-align: center;
+}
+
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+  border-right:0; 
+  box-shadow:0 0 0; 
+  border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.event-search {
+  margin: auto;
+  margin-left: 0 !important;
+}

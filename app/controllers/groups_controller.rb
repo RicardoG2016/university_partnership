@@ -3,6 +3,15 @@ class GroupsController < ApplicationController
 
 # for use with gov api to get school lists
 # ENV['GOV_EDU_API']
+  
+  def search
+    if params[:search].present?
+      @group = Group.search(params[:search])
+    else
+      @group = Group.all
+    end
+  end
+
   def index
     @groups = Group.all.order('created_at DESC')
   end

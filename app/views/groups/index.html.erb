@@ -1,27 +1,36 @@
-<h1>Current University Partners</h1>
- 
-<table>
-  <tr>
-    <th>University</th>
-    <th>President</th>
-    <th>Email</th>
-    <th>Phone</th>
-  </tr>
- 
-  <% @groups.each do |group| %>
-    <tr>
-      <td><%= group.university %></td>
-      <td><%= group.president %></td>
-      <td><%= group.email %></td>
-      <td><%= group.phone %></td>
-      <td><%= link_to 'Show', group_path(group) %></td>
-      <td><%= link_to 'Edit', edit_group_path(group) %></td>
-      <td><%= link_to 'Delete', group_path(group),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } 
-      %></td>
-      
-    </tr>
-  <% end %>
-  <hr>
-</table>
+<div class="container">
+
+  <div class="header">
+    <h1 class="event-header text-muted">Current University Partners</h1>  
+  </div>
+
+    <br>
+    <br>
+
+  <div class="text-muted col-md-12 row"> 
+    <% @groups.each do |group|%>
+      <div class="col-md-4 col-sm-12">
+        <div class="card event-card">
+          <div class="card-block event-block">
+            <span> <%= group.university %></span>
+            <hr>
+            <div class="event-details">
+              <p class="card-text event-text">Email: <%= group.email %></p>
+              <p class="card-text event-text">Phone: <%= group.phone %></p>
+              <br>
+              <span><%= link_to 'Edit', edit_group_path(group) %></span>
+              <span>
+              <%= link_to 'Delete', group_path(group),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } 
+              %>              
+              </span>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <br>
+  </div>
+</div>
