@@ -1,9 +1,9 @@
- <%= form_for(@group) do |g| %>
- 
+<%= form_for(@group) do |g| %>
+
   <% if @group.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@group.errors.count, "error") %> prohibited
+        <%= pluralize(g.errors.count, "error") %> prohibited
         this group from being saved:
       </h2>
       <ul>
@@ -13,7 +13,7 @@
       </ul>
     </div>
   <% end %>
- 
+
 <p>
   <%= g.label :university %><br>
   <%= g.text_field :university %>
