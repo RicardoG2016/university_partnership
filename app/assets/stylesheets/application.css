@@ -42,18 +42,25 @@ a.navbar-brand > img {
   vertical-align: text-bottom;
 }
 
- a.nav-link {
+/* a.nav-link {
   text-decoration: none;
   color: #757575;
   margin-top: 19px;
   padding-left: 0 !important;
+}*/
+
+li.nav-item {
+  margin: auto;
+  /*margin-top: 15px;*/
 }
 
 .grid {
-  text-decoration: none;
-  color: #0d723b;
-  padding-left: 0 !important;
+  /*padding-left: 0 !important;*/
   text-decoration: none !important;
+}
+
+.nav-icons {
+  color: #0d723b;
 }
 
 /*Google Iconcs*/

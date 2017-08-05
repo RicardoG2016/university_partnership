@@ -21,7 +21,7 @@
               <span><%= link_to 'Edit', edit_group_path(group) %></span>
               <span>
               <%= link_to 'Delete', group_path(group),
-                      method: :delete,
+                      :method => :delete,
                       data: { confirm: 'Are you sure?' } 
               %>              
               </span>

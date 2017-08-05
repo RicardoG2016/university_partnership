@@ -1,0 +1,20 @@
+<div class="album text-muted col-md-12 row">
+  <% @post.each do |p| %>
+    <div class="posts col-md-7">
+      <div class="edit-icons">
+        <% if p.group == current_group %>
+          <%= link_to edit_post_path(p), :method => :get do %>
+            <i class="material-icons edit-icon">edit_mode</i>
+          <% end %>
+          <%= link_to post_path(p), :method => :delete, data: { confirm: "Are you sure?"} do %>
+            <i class="material-icons edit-icon">delete</i>
+          <% end %>
+        <% end %>
+      </div>
+        <h3 class="card-text post-text"><%= link_to p.body, p, class: "" %></h3>
+        <span class="card-text post-text"><%= p.group.university %></span>    
+      </p>    
+      <br>
+    </div>
+  <% end %>
+</div> 

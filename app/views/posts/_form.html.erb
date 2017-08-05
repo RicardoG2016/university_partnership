@@ -1,0 +1,14 @@
+<div class="continer">
+<br>
+<br>
+<br>
+  <%= form_for(@post) do |p| %>
+    <p>
+      <%= p.label :body %>
+      <%= p.text_field :body %>  
+    </p>
+    <p>
+      <%= p.submit %>  
+    </p>
+  <% end %>  
+</div>

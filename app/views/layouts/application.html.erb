@@ -25,34 +25,52 @@
       <div class="page-spacing">
       <nav class=" navbar navbar-toggleable-md fixed-top">
         <div class="nav-header">
+        <ul class="navbar-nav">
           <a href="#menu-toggle" class="grid" id="menu-toggle">
-            <span><i class="material-icons md-36">menu</i></span>
+            <li class="nav-item">
+              <i class="material-icons md-36 nav-icons">menu</i>
+            </li>
           </a>
           <a href="/">            
-            <spam>
+            <li class="nav-item">
               <a class="navbar-brand nav-item" href="/">
                 <%= image_tag("logo.png", size: "55x45", :alt => "logo") %>
               </a>
-            </spam>
+            </li>
           </a>
+        </ul>
+          
         </div>      
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
-          <%= form_tag search_groups_path, method: :get, class: "search-bar", role: "search" do %>
+          <%= form_tag posts_path, method: :get, class: "search-bar", role: "search" do %>
             <p>
               <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
               <% submit_tag "", name: nil, class: "submit-on-enter" %>
             </p>
           <% end %>
-            <li class="nav-item active log_options">
-              <a class="nav-link" href="/users/sign_in">Sign In</a>
-            </li>
-            <li class="nav-item active log_options">
-              <a class="nav-link" href="#">|</a>
-            </li>            
-            <li class="nav-item active log_options">
-              <a class="nav-link" href="/users/sign_up">Sign Up</a>
-            </li>
+            <% if current_group %>
+            <li class="nav-item">                  
+              <a class="nav-link" href="/posts/new">
+                <i class="material-icons md-36 nav-icons">add</i>
+              <a/>
+            </li>  
+            <li class="nav-item">      
+              <a href="/">
+                <i class="material-icons md-36 nav-icons">notifications</i>
+              </a>
+            </li>     
+            <% else %>
+              <li class="nav-item active">
+                <a class="nav-link" href="/groups/sign_in">Sign In</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">|</a>
+              </li>              
+              <li class="nav-item active">
+                <a class="nav-link" href="/groups/sign_up">Sign Up</a>
+              </li>         
+          <% end %>  
         </ul> 
     </nav>
 
@@ -93,17 +111,17 @@
                   </a>
                 </li>                
                 <li>                
-                  <a href="#">
+                  <a href="/groups/edit">
                     <i class="material-icons md-36">settings</i>
                     <span class="side-bar-text">Settings</span>
                   </a>
                 </li>
                 <hr>
                 <li>
-                  <a href="#">
+                  <%= link_to destroy_group_session_path, :method => :delete do %>
                     <i class="material-icons md-36">exit_to_app</i>
                     <span class="side-bar-text">Logout</span>
-                  </a>
+                  <% end %>
                 </li>                
             </ul>
         </div>

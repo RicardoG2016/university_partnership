@@ -1,0 +1,16 @@
+<div class="album text-muted col-md-12 row"> 
+  <div class="posts col-md-7">
+    <div class="edit-icons">
+      <% if @post.group == current_group %>
+        <%= link_to edit_post_path(@post), :method => :get do %>
+          <i class="material-icons edit-icon">edit_mode</i>
+        <% end %>
+        <%= link_to post_path(@post), :method => :delete, data: { confirm: "Are you sure?"} do %>
+          <i class="material-icons edit-icon">delete</i>
+        <% end %>
+      <% end %>
+    </div>
+      <h3 class="cars-text post-text"><%= link_to @post.body, @post %></h3>
+      <span class="card-text post-text"><%= @post.group.university %></span>
+  </div>
+</div>

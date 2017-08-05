@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .posts {
-  padding: 10px;
+  padding: 30px !important;
   margin: 2% auto;
   border: solid 1px #e0e0e0;
   border-radius: 2px;
@@ -19,7 +19,7 @@
 }
 
 .post-text, .post-title {
-  padding: 10px;
+  padding: 30px;
   text-align: left;
 }
 
@@ -35,10 +35,10 @@
 }
 
 div.posts.col-md-7:hover {
-  
+  box-shadow: rgba(0, 0, 0, 0.12) 3px 7px 7px, rgba(0, 0, 0, 0.12) 10px 10px 10px;
+
   .edit-icons {
     display: inline;
     float: right;
   }
-  
 }

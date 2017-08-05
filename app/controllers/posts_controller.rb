@@ -1,16 +1,20 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :delete] 
+  before_action :find_post, only: [:show, :edit, :update, :destroy] 
+  before_action :authenticate_group!, except: [:index, :show]
 
 def index
-  @post = Post.all
+  @post = Post.all.order("created_at DESC")
 end
 
 def show
+  # without devise
   # @post = Post.find(params[:id])
 end
 
 def new
-  @post = Post.new
+  # without devise
+  # @post = Post.new
+  @post = current_group.posts.build
 end
 
 def edit
@@ -18,7 +22,9 @@ def edit
 end
 
 def create
-  @post = Post.new(post_params)
+  # without devise
+  # @post = Post.new(post_params)
+  @post = current_group.posts.build(post_params)
 
   if @post.save
     redirect_to @post
@@ -37,7 +43,7 @@ def update
   end
 end
 
-def delete
+def destroy
   # @post = Post.find(params[:id])
 
   @post.destroy
@@ -52,7 +58,7 @@ end
 
 
 def post_params
-  params.require(:post).permit(:title, :body)
+  params.require(:post).permit(:body)
 end
 
 
