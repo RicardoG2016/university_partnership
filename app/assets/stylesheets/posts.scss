@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .posts {
+  transition: box-shadow 0.9s ease;
   padding: 30px !important;
   margin: 2% auto;
   border: solid 1px #e0e0e0;

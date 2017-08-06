@@ -30,14 +30,12 @@
             <li class="nav-item">
               <i class="material-icons md-36 nav-icons">menu</i>
             </li>
-          </a>
-          <a href="/">            
-            <li class="nav-item">
-              <a class="navbar-brand nav-item" href="/">
-                <%= image_tag("logo.png", size: "55x45", :alt => "logo") %>
-              </a>
-            </li>
-          </a>
+          </a>          
+            <a class="" href="/">
+              <li class="nav-item">              
+                <%= image_tag("logo.png", class: "logo", size: "55x45", :alt => "logo") %>              
+              </li>
+            </a>
         </ul>
           
         </div>      
@@ -52,7 +50,7 @@
             <% if current_group %>
             <li class="nav-item">                  
               <a class="nav-link" href="/posts/new">
-                <i class="material-icons md-36 nav-icons">add</i>
+                <i class="material-icons md-36 nav-icons">add_circle</i>
               <a/>
             </li>  
             <li class="nav-item">      
@@ -83,14 +81,26 @@
                     <i class="material-icons md-36">home</i>
                     <span class="side-bar-text">Home</span>
                   </a>
-                </li>  
-                <hr>
+                </li> 
                 <li>                
                   <a href="/groups">
                     <i class="material-icons md-36">group</i>
                     <span class="side-bar-text">Groups</span>
                   </a>
-                </li>                
+                </li>                 
+                <hr>
+                <li>                
+                  <a href="/posts/new">
+                    <i class="material-icons md-36">add_circle</i>
+                    <span class="side-bar-text">Add Post</span>
+                  </a>
+                </li>
+                <li>                
+                  <a href="/posts/new">
+                    <i class="material-icons md-36">notifications</i>
+                    <span class="side-bar-text">Notifications</span>
+                  </a>
+                </li>                   
                 <li>                
                   <a href="#">
                     <i class="material-icons md-36">mail</i>
@@ -104,12 +114,12 @@
                   </a>
                 </li>
                 <hr>
-                <li>                
+<!--                 <li>                
                   <a href="/groups/new">
                     <i class="material-icons md-36">person_add</i>
                     <span class="side-bar-text">Add Group</span>
                   </a>
-                </li>                
+                </li> -->                
                 <li>                
                   <a href="/groups/edit">
                     <i class="material-icons md-36">settings</i>

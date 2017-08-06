@@ -49,6 +49,8 @@ a.navbar-brand > img {
   padding-left: 0 !important;
 }*/
 
+
+
 li.nav-item {
   margin: auto;
   /*margin-top: 15px;*/
@@ -77,9 +79,10 @@ li.nav-item {
 .search-bar {
   margin: auto;
   position: relative;
-  padding: 0 0 0 152px;
-  width: 90%;
+  padding: 0 30px;
+  width: 100%;
   margin-top: 15px;
+  margin-left: 130px;
 }
 
 .search-bar input {
@@ -100,4 +103,18 @@ li.nav-item {
 
 .comment-title {
   text-align: center;
+}
+
+
+@media screen and (min-width: 992px) {
+    .logo {
+        margin-top: 3px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .logo {
+        margin-top: -78px;
+        margin-left: 65px;
+    }
 }
