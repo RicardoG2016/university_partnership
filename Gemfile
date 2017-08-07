@@ -40,6 +40,7 @@ gem 'pry-rails', :group => :development
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'devise', '4.3'
+gem 'simple_form'
 
 
 

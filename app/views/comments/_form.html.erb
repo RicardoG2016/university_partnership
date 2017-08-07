@@ -1,0 +1,6 @@
+<div class="comment-area">
+  <%= simple_form_for([@post, @post.comments.build]) do |f| %>
+    <%= f.input :content, label: "Add Comment", class: "label comment-label" %>
+    <%= f.button :submit, class: "button comment-btn" %>
+  <% end %>  
+</div>

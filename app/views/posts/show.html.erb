@@ -11,6 +11,18 @@
       <% end %>
     </div>
       <h3 class="cars-text post-text"><%= link_to @post.body, @post %></h3>
-      <span class="card-text post-text"><%= @post.group.university %></span>
+      <span class="card-text post-text">
+        <%= @post.group.university %>
+      </span>
+      <% if @comments %>
+        <h3 class="card-text post-text comment-title">Comments</h3>
+      <% end %>
+      <% @comments.each do |comment| %>
+        <p class="card-text post-text"><%= comment.content %> </p>
+        <p class="card-text post-text comment-header"><%= comment.group.university %> - <%= comment.created_at.strftime("%m/%d/%Y") %> </p>
+        <hr>
+        <!-- <br> -->
+      <% end %>  
+      <%= render 'comments/form' %>
   </div>
 </div>

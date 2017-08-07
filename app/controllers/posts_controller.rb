@@ -19,6 +19,7 @@ end
 def show
   # without devise
   # @post = Post.find(params[:id])
+  @comments = Comment.where(post_id: @post)
 end
 
 def new
@@ -45,7 +46,6 @@ end
 
 def update
   # @post = Post.find(params[:id])
-
   if @post.update(post_params)
     redirect_to @post
   else
@@ -55,22 +55,17 @@ end
 
 def destroy
   # @post = Post.find(params[:id])
-
   @post.destroy
   redirect_to '/'
 end
 
 private
-
 def find_post
   @post = Post.find(params[:id])
 end
 
-
 def post_params
   params.require(:post).permit(:body)
 end
-
-
 
 end
