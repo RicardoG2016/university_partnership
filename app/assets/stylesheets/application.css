@@ -97,6 +97,10 @@ li.nav-item {
   background-color: white;
 }
 
+.result-title {
+  text-align: center;
+}
+
 .log_options {
   float: right;
 }

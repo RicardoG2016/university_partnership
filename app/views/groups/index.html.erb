@@ -3,10 +3,8 @@
   <div class="header">
     <h1 class="event-header text-muted">Current University Partners</h1>  
   </div>
-
-    <br>
-    <br>
-
+  <br>
+  <br>
   <div class="text-muted col-md-12 row"> 
     <% @groups.each do |group|%>
       <div class="col-md-4 col-sm-12">
@@ -18,13 +16,15 @@
               <p class="card-text event-text">Email: <%= group.email %></p>
               <p class="card-text event-text">Phone: <%= group.phone %></p>
               <br>
-              <span><%= link_to 'Edit', edit_group_path(group) %></span>
-              <span>
-              <%= link_to 'Delete', group_path(group),
-                      :method => :delete,
-                      data: { confirm: 'Are you sure?' } 
-              %>              
-              </span>
+              <% if current_group == group %>
+                <span><%= link_to 'Edit', edit_group_path(group) %></span>
+                <span>
+                <%= link_to 'Delete', group_path(group),
+                        :method => :delete,
+                        data: { confirm: 'Are you sure?' } 
+                %>              
+                </span>
+              <% end %>
             </div>
             <br>
           </div>
