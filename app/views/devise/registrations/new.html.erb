@@ -20,35 +20,25 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
+<hr>
    <div class="field">
-    <%= g.label :university %><br>
-    <%= g.text_field :university %>
+    <%= f.label :university %><br>
+    <%= f.text_field :university %>
   </div>
 
   <div class="field">
-    <%= g.label :email %><br>
-    <%= g.email_field :email %>
+    <%= f.label :phone %><br>
+    <%= f.telephone_field :phone %>
   </div>
 
   <div class="field">
-    <%= g.label :password %><br>
-    <%= g.password_field :password %>
+    <%= f.label :president %><br>
+    <%= f.text_field :president %>
   </div>
 
   <div class="field">
-    <%= g.label :phone %><br>
-    <%= g.telephone_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= g.label :president %><br>
-    <%= g.text_field :president %>
-  </div>
-
-  <div class="field">
-    <%= g.label :member_count %><br>
-    <%= g.number_field :member_count %>
+    <%= f.label :member_count %><br>
+    <%= f.number_field :member_count %>
   </div>
 
   <div class="actions">

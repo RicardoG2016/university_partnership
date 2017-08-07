@@ -2,6 +2,16 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy] 
   before_action :authenticate_group!, except: [:index, :show]
 
+def search
+  if params[:search].present?
+    @post = Post.search(params[:search])
+    @group = Group.search(params[:search])
+  else
+    @post = Post.all
+    @group = Group.all
+  end
+end
+
 def index
   @post = Post.all.order("created_at DESC")
 end

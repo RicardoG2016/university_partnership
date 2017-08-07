@@ -41,7 +41,7 @@
         </div>      
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
-          <%= form_tag posts_path, method: :get, class: "search-bar", role: "search" do %>
+          <%= form_tag search_posts_path, method: :get, class: "search-bar", role: "search" do %>
             <p>
               <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
               <% submit_tag "", name: nil, class: "submit-on-enter" %>
@@ -127,12 +127,14 @@
                   </a>
                 </li>
                 <hr>
-                <li>
-                  <%= link_to destroy_group_session_path, :method => :delete do %>
-                    <i class="material-icons md-36">exit_to_app</i>
-                    <span class="side-bar-text">Logout</span>
-                  <% end %>
-                </li>                
+                <% if current_group %>
+                  <li>
+                    <%= link_to destroy_group_session_path, :method => :delete do %>
+                      <i class="material-icons md-36">exit_to_app</i>
+                      <span class="side-bar-text">Logout</span>
+                    <% end %>
+                  </li>
+                <% end %>                
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->

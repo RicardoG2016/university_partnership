@@ -2,13 +2,17 @@
 <br>
 <br>
 <br>
-  <%= form_for(@post) do |p| %>
-    <p>
-      <%= p.label :body %>
-      <%= p.text_field :body %>  
-    </p>
-    <p>
-      <%= p.submit %>  
-    </p>
-  <% end %>  
+  <% if @post %>
+    <%= form_for(@post) do |p| %>
+      <p>
+        <%= p.label :body %>
+        <%= p.text_area :body %>  
+      </p>
+      <p>
+        <%= p.submit %>  
+      </p>
+    <% end %>
+  <% else %>
+    <p> Currently there are no posts. </p> 
+  <% end %> 
 </div>

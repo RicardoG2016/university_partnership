@@ -1,24 +1,7 @@
-# README
+# University Partnership App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Application will allow Rainforest Partnershp to collaborate with university clubs and collaborate in a central location.
 
-Things you may want to cover:
+### Application is currently being developed, screenshot of current progress is below.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![alt text](https://user-images.githubusercontent.com/20272116/28992688-e73ea96a-7968-11e7-9b89-4f0594c5804b.png)

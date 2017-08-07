@@ -1,0 +1,22 @@
+<div class="album text-muted col-md-12 row"> 
+<% if @post.length > 0 %>
+  <% @post.each do |p| %>
+    <div class="posts col-md-7">
+      <br>
+      <p class="card-text post-text"><%= link_to p.body, p %></p>
+      <p class="card-text post-text">By: <%= link_to p.group.university, group_path(p.group) %></p>
+      <br>
+    </div>
+  <% end %>
+<% end %>
+<% if @group.length > 0 %>
+  <% @group.each do |g| %>
+    <div class="posts col-md-7">
+      <br>
+      <p class="card-text post-text"><%= link_to g.university, g %></p>
+      <br>
+    </div>
+  <% end %>
+<% end %>
+
+</div>
