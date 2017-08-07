@@ -2,12 +2,8 @@ Rails.application.routes.draw do
   devise_for :groups
   get 'groups/index'
 
-  resources :groups do
-    # collection do 
-    #   get 'search'
-    # end
-  end
-
+  resources :groups, :events
+  
   resources :posts do
     collection do 
       get 'search'

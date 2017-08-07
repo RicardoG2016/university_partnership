@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="header">
+    <h1 class="event-header text-muted">Scheduled Events</h1>  
+  </div>
+  <br>
+  <br>
+  <div class="text-muted col-md-12 row">
+    <% if @events.length > 0 %>
+
+      <% @events.each do |event|%>
+        <div class="col-md-4 col-sm-12">
+          <div class="card event-card">
+            <div class="card-block event-block">
+              <span> <%= event.name %></span>
+              <hr>
+              <div class="event-details">                
+                <p class="card-text event-text">Date: <%= event.date %></p>
+                <p class="card-text event-text">Time: <%= event.time %></p>
+                <p class="card-text event-text">Address: <%= event.address %></p>
+                <hr>
+                <p class="card-text event-text">Description: <%= event.description %></p>
+                <p class="card-text event-text">Hosted by: <%= event.group.university %></p>
+                <br>
+                <% if current_group == event.group %>
+                  <span><%= link_to 'Edit', edit_event_path(event) %></span>
+                  <span>
+                  <%= link_to 'Delete', event_path(event),
+                          :method => :delete,
+                          data: { confirm: 'Are you sure?' } 
+                  %>              
+                  </span>
+                <% end %>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    <% else %>
+
+      <h2>Add an Event</h2>
+      <a class="nav-link" href="/events/new">
+        <i class="material-icons md-36 nav-icons">add_circle</i>
+      <a/>
+
+    <% end %>
+    <br>
+  </div>
+</div>
