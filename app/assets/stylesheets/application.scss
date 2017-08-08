@@ -14,6 +14,9 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+*= require pickadate/classic
+*= require pickadate/classic.date
+*= require pickadate/classic.time
 *= require_tree
  */
 @import "materialize";
@@ -109,6 +112,22 @@ li.nav-item {
 
 .comment-title {
   text-align: center;
+}
+
+.header {
+  text-align: center !important;
+  padding: 30px;
+}
+
+.container-content {
+  margin: 5%;
+  padding-right: 31px;
+}
+
+/*date and time picker */
+div.picker__holder {
+  min-height: 100%;
+  min-width: 100%;
 }
 
 

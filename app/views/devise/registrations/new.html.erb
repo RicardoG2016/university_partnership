@@ -1,49 +1,63 @@
-<h2>Sign up</h2>
+<div class="container header">
+  <h2>Sign up</h2>
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |e| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-<hr>
-   <div class="field">
-    <%= f.label :university %><br>
-    <%= f.text_field :university %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.telephone_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :president %><br>
-    <%= f.text_field :president %>
-  </div>
-
-  <div class="field">
-    <%= f.label :member_count %><br>
-    <%= f.number_field :member_count %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      <div class="row">
+        <div class="email-field col s6">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>      
+        </div>
+      </div>
+      <div class="row">
+        <div class="password-field col s6">        
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="time-field col s6">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= e.label :university %>
+          <%= e.text_field :university %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= e.label :president %>
+          <%= e.text_field :president %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="telephone-field col s6">
+          <%= e.label :phone %>
+          <%= e.tel_field :phone %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="number-field col s6">
+          <%= e.label :member_count %>
+          <%= e.number_field :member_count %>
+        </div>
+      </div>      
+        <p>
+          <button class="btn waves-effect waves-light" type="submit" name="action">
+            <%= e.submit "Save" %>  
+          </button>          
+        </p>
+  <% end %> 
+</div>
 
 <%= render "devise/shared/links" %>
+

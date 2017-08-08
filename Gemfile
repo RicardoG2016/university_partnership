@@ -43,6 +43,7 @@ gem 'devise', '4.3'
 gem 'simple_form'
 gem 'materialize-sass'
 gem 'material_icons'
+gem 'pickadate-rails'
 
 
 group :development, :test do

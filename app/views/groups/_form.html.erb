@@ -1,48 +1,55 @@
-<%= form_for(@group) do |g| %>
+<div class="container">
+  <%= form_for(@group) do |f| %>
 
-  <% if @group.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(g.errors.count, "error") %> prohibited
-        this group from being saved:
-      </h2>
-      <ul>
-        <% @group.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :email %><br />
+        <%= f.email_field :email%>      
+      </div>
     </div>
-  <% end %>
-
-<p>
-  <%= g.label :university %><br>
-  <%= g.text_field :university %>
-</p>
-<hr>
-<p>
-  <%= g.label :email %><br>
-  <%= g.email_field :email %>
-</p>
-<p>
-  <%= g.label :password %><br>
-  <%= g.password_field :password %>
-</p>
-<p>
-  <%= g.label :phone %><br>
-  <%= g.telephone_field :phone %>
-</p>
-<p>
-  <%= g.label :president %><br>
-  <%= g.text_field :president %>
-</p>
-<p>
-  <%= g.label :member_count %><br>
-  <%= g.number_field :member_count %>
-</p>
- 
-  <p>
-    <%= g.submit %>
-  </p>
- 
-<% end %>
- 
+    <div class="row">
+      <div class="input-field col s6">        
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :university %>
+        <%= f.text_field :university %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :president %>
+        <%= f.text_field :president %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :phone %>
+        <%= f.telephone_field :phone %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :member_count %>
+        <%= f.number_field :member_count %>
+      </div>
+    </div>      
+      <p>
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+          <%= f.submit "Save" %>  
+        </button>          
+      </p>
+  <% end %> 
+</div>

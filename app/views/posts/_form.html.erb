@@ -1,18 +1,19 @@
-<div class="continer">
+<div class="container">
 <br>
 <br>
 <br>
-  <% if @post %>
-    <%= form_for(@post) do |p| %>
+<br>
+  <%= form_for(@post) do |p| %>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= p.label :body %>
+          <%= p.text_field :body %>
+        </div>
+      </div>
       <p>
-        <%= p.label :body %>
-        <%= p.text_area :body %>  
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+          <%= p.submit "Save" %>  
+        </button>          
       </p>
-      <p>
-        <%= p.submit %>  
-      </p>
-    <% end %>
-  <% else %>
-    <p> Currently there are no posts. </p> 
-  <% end %> 
+  <% end %>  
 </div>

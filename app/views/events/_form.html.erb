@@ -1,39 +1,48 @@
-<%= form_for(@event) do |e| %>
-<% if @post %>
-  <p>
-    <%= e.label :name %><br>
-    <%= e.text_field :name %>
-  </p>
-  <p>
-    <%= e.label :date %><br>
-    <%= e.date_field :date %>
-  </p>
-  <p>
-    <%= e.label :time %><br>
-    <%= e.time_field :time %>
-  </p>
-  <p>
-    <%= e.label :address %><br>
-    <%= e.text_field :address %>
-  </p>
-  <p>
-    <%= e.label :description %><br>
-    <%= e.text_field :description %>
-  </p>
+<div class="container">
+  <%= form_for(@event) do |e| %>
+    <% if @event %>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= e.label :name %>
+          <%= e.text_field :name %>      
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-field col s6">        
+          <%= e.label :date %>
+          <%= e.text_field :date, :id => "datepicker" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-field col s6">
+          <%= e.label :time %>
+          <%= e.text_field :time, :id => "timepicker" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= e.label :address %>
+          <%= e.text_field :address %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= e.label :description %>
+          <%= e.text_field :description %>
+        </div>
+      </div>
+      <br>
+        <p>
+          <button class="btn waves-effect waves-light" type="submit" name="action">
+            <%= e.submit "Save" %>  
+          </button>          
+        </p>
+    <% end %> 
+  <% end %> 
+</div>
 
-    <p>
-      <%= e.submit "Save" %>
-    </p>
-<% else %>
-  <p>There are no events, would you like to create one?</p> 
-  <hr>
-  <h2>Add an Event</h2>
-  <a class="nav-link" href="/events/new">
-    <i class="material-icons md-36 nav-icons">add_circle</i>
-  <a/>
-<% end %>
 
-
+<!-- 
   <div class="row">
     <form class="col s12">
       <div class="row">
@@ -71,5 +80,5 @@
       </div>
     </form>
   </div>
-
+ -->
 
