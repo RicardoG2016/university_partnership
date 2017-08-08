@@ -18,38 +18,37 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
   
   </head>
 
   <body>
-
-      <div class="page-spacing">
       <nav class=" navbar navbar-toggleable-md fixed-top">
         <div class="nav-header">
         <ul class="navbar-nav">
+        <% if current_group %>
           <a href="#menu-toggle" class="grid" id="menu-toggle">
             <li class="nav-item">
               <i class="material-icons md-36 nav-icons">menu</i>
             </li>
-          </a>          
+          </a>
+        <% end %>
             <a class="" href="/">
               <li class="nav-item">              
-                <%= image_tag("logo.png", class: "logo", size: "55x45", :alt => "logo") %>              
+                <%= image_tag("logo.png", class: "logo", size: "55x45", :alt => "logo") %>           
               </li>
             </a>
         </ul>
           
-        </div>      
+        </div>
       <div class="collapse navbar-collapse">
-        <ul class="navbar-nav">
-          <%= form_tag search_posts_path, method: :get, class: "search-bar text-field", role: "search" do %>
-            <p>
-              <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
-              <% submit_tag "", name: nil, class: "submit-on-enter" %>
-            </p>
-          <% end %>
-            <% if current_group %>
+        <% if current_group %>
+          <ul class="navbar-nav">          
+            <%= form_tag search_posts_path, method: :get, class: "search-bar text-field", role: "search" do %>
+              <p>
+                <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
+                <% submit_tag "", name: nil, class: "submit-on-enter" %>
+              </p>
+            <% end %>
               <li class="nav-item">                  
                 <a class="nav-link" href="/posts/new">
                   <i class="material-icons md-36 nav-icons">add_circle</i>
@@ -59,15 +58,25 @@
                 <a href="/">
                   <i class="material-icons md-36 nav-icons">notifications</i>
                 </a>
-              </li>     
-            <% else %>
-                <li class="nav-item active">
+              </li> 
+                <li class="nav-item">
                   <a class="nav-link" href="/groups/sign_in">Sign In</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="#">|</a>
                 </li>              
-                <li class="nav-item active">
+                <li class="nav-item">
+                  <a class="nav-link" href="/groups/sign_up">Sign Up</a>
+                </li>     
+            <% else %>
+              <ul class="landing-navbar-nav"> 
+                <li class="landing-page">
+                  <a class="nav-link" href="/groups/sign_in">Sign In</a>
+                </li>
+                <li class="landing-page">
+                  <a class="nav-link" href="#">|</a>
+                </li>              
+                <li class="landing-page">
                   <a class="nav-link" href="/groups/sign_up">Sign Up</a>
                 </li>         
           <% end %>  
@@ -76,6 +85,7 @@
 
     <div id="wrapper">
         <!-- Sidebar -->
+        <% if current_group %>
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">            
                 <li>
@@ -133,20 +143,23 @@
                 <% end %>                
             </ul>
         </div>
+        <% end %>
         <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-content">
-              <div class="col-lg-12">
-                  <p class="notice"><%= notice %></p>
-                  <p class="alert"><%= alert %></p> 
-                  <%= yield %>                       
-                  <p id="demo"></p>
-              </div>
+              <!-- Page Content -->
+            <% if current_group %>
+              <div id="page-content-wrapper">
+                  <div class="container-content">
+            <% else %>
+              <div>
+                  <div>
+            <% end %>
+              <p class="notice"><%= notice %></p>
+              <p class="alert"><%= alert %></p> 
+              <%= yield %>                       
+              <p id="demo"></p>
             </div>
         </div>
-    </div>
     </div>
 <!--     <footer class="text-muted">
       <div class="container">

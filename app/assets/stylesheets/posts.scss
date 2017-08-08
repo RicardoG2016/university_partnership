@@ -9,6 +9,7 @@
   border: solid 1px #e0e0e0;
   border-radius: 2px;
   width: 50%;
+  text-decoration: none !important;
 }
 
 .posts img {
@@ -26,13 +27,12 @@
 
 .edit-icons {
   display: none;
-  float: right;
+  float: right;  
 }
 
-.edit-icon {
+i.material-icons.edit-icon {
   color: #757575;
-  text-decoration: none;
-  padding-right: 0 !important;
+  width: 30px;
 }
 
 div.posts.col-md-7:hover {

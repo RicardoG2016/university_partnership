@@ -43,8 +43,13 @@ body, h1, h2, h3, h4, h5 {
   width: 100%;
  }
 
+ .landing-navbar-nav {
+  margin-left: 85%;
+ }
+
 a.navbar-brand > img {
   vertical-align: text-bottom;
+  margin-left: 10px;
 }
 
  a.nav-link {
@@ -55,6 +60,10 @@ a.navbar-brand > img {
 
 li.nav-item {
   margin: auto;
+}
+
+li.landing-page {
+ margin-left: 15px; 
 }
 
 .grid {
