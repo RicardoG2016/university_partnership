@@ -47,22 +47,17 @@ a.navbar-brand > img {
   vertical-align: text-bottom;
 }
 
-/* a.nav-link {
+ a.nav-link {
   text-decoration: none;
   color: #757575;
-  margin-top: 19px;
   padding-left: 0 !important;
-}*/
-
-
+}
 
 li.nav-item {
   margin: auto;
-  /*margin-top: 15px;*/
 }
 
 .grid {
-  /*padding-left: 0 !important;*/
   text-decoration: none !important;
 }
 
@@ -97,7 +92,7 @@ li.nav-item {
   border-width: 1px;
   border-radius: 2px;
   padding: 2px;
-  border-style: none;
+  border-style: none !important;
   box-shadow: 0px 0px 2px 2px #eff2f3;
   background-color: white;
 }
@@ -116,11 +111,12 @@ li.nav-item {
 
 .header {
   text-align: center !important;
-  padding: 30px;
+  padding: 20px;
 }
 
 .container-content {
   margin: 5%;
+  margin-top: 0;
   padding-right: 31px;
 }
 
