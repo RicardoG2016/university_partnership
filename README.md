@@ -12,9 +12,13 @@
 
 
 
+
+
 ### Simple layout will explain the purpose of the program.
 - #### Bootstrap and materliaze are used for styling.
 ![alt text](https://user-images.githubusercontent.com/20272116/29062932-4e61dc02-7be9-11e7-9b02-2a935885101e.png)
+
+
 
 
 
@@ -26,8 +30,12 @@
 
 
 
+
+
 ### Pickadate.js and JQueryUI provide intuitive date and time pickers.
 ![alt text](https://user-images.githubusercontent.com/20272116/29062942-5378a22a-7be9-11e7-87e1-1310851e1dcf.png)
+
+
 
 
 
