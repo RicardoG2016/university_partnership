@@ -22,7 +22,7 @@
 
 
 
-### Materialize provides an elegant set of forms and styling.
+### Materialize provides an elegant set of forms.
 ![alt text](https://user-images.githubusercontent.com/20272116/29062931-4e5e7904-7be9-11e7-9183-bb382a85dfd9.png)
 
 
@@ -34,7 +34,7 @@
 
 ### Pickadate.js and JQueryUI provide intuitive date and time pickers.
 ![alt text](https://user-images.githubusercontent.com/20272116/29062942-5378a22a-7be9-11e7-87e1-1310851e1dcf.png)
-
+![alt text](https://user-images.githubusercontent.com/20272116/29062943-538c1db4-7be9-11e7-9238-f3a9ad896f2a.png)
 
 
 
