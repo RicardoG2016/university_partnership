@@ -8,23 +8,23 @@
 
       <div class="row">
         <div class="email-field col s6">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>      
+          <%= e.label :email %><br />
+          <%= e.email_field :email, autofocus: true %>      
         </div>
       </div>
       <div class="row">
         <div class="password-field col s6">        
-          <%= f.label :password %>
+          <%= e.label :password %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
+          <%= e.password_field :password, autocomplete: "off" %>
         </div>
       </div>
       <div class="row">
         <div class="time-field col s6">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= e.label :password_confirmation %><br />
+          <%= e.password_field :password_confirmation, autocomplete: "off" %>
         </div>
       </div>
       <div class="row">
@@ -42,7 +42,7 @@
       <div class="row">
         <div class="telephone-field col s6">
           <%= e.label :phone %>
-          <%= e.tel_field :phone %>
+          <%= e.text_field :phone %>
         </div>
       </div>
       <div class="row">
