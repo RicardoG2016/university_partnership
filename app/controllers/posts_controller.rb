@@ -4,9 +4,11 @@ class PostsController < ApplicationController
 
 def search
   if params[:search].present?
+    @event = Event.search(params[:search])
     @post = Post.search(params[:search])
     @group = Group.search(params[:search])
   else
+    @event = Event.all
     @post = Post.all
     @group = Group.all
   end

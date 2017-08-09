@@ -11,8 +11,8 @@
               <span> <%= event.name %></span>
               <hr>
               <div class="event-details">                
-                <p class="card-text event-text">Date: <%= event.date %></p>
-                <p class="card-text event-text">Time: <%= event.time %></p>
+                <p class="card-text event-text">Date: <%= event.date.strftime("%m/%d/%Y") %></p>
+                <p class="card-text event-text">Time: <%= event.time.strftime("%l:%M%P") %></p>
                 <p class="card-text event-text">Address: <%= event.address %></p>
                 <hr>
                 <p class="card-text event-text">Description: <%= event.description %></p>

@@ -1,32 +1,51 @@
-<p>
-  <strong>University</strong><br>
-  <%= @event.group.university %>
-</p>
- 
- <p>
-  <strong>Name</strong><br>
-  <%= @event.name %>
-</p>
-<p>
-  <strong>Description</strong><br>
-  <%= @event.description %>
-</p>
-<p>
-  <strong>Date</strong><br>
-  <%= @event.date %>
-</p>
 
-<p>
-  <strong>Time</strong><br>
-  <%= @event.time %>
-</p>
+      <br>
+      <br>
+      <br>
+<div class="album text-muted col-md-12 row"> 
+  <div class="posts col-md-7">
+      <div class="container">
+        <h2 class="new-header">New Event Created</h2> 
+      </div>
 
-<p>
-  <strong>Address</strong><br>
-  <%= @event.address %>
-</p>
+      <p>
+        <strong class="cars-text post-text">Name</strong><br>    
+        <span class="card-text post-text"><%= @event.name %></span>
+      </p>
 
-<% if current_group == @event.group %>
-  <%= link_to 'Edit', edit_event_path(@event) %> |
-  <%= link_to 'Back', events_path %>
-<% end %>
+      <p>
+        <strong class="cars-text post-text">Description</strong><br>  
+        <span class="card-text post-text"><%= @event.description %></span>
+      </p>
+
+      <p>
+        <strong class="cars-text post-text">Date</strong><br>
+        <span class="card-text post-text"><%= @event.date.strftime("%m/%d/%Y") %></span>
+      </p>
+
+      <p>
+        <strong class="cars-text post-text">Time</strong><br>
+        <span class="card-text post-text"><%= @event.time.strftime("%l:%M%P") %></span>
+      </p>
+
+      <p>
+        <strong class="cars-text post-text">Address</strong><br>
+        <span class="card-text post-text"><%= @event.address %></span>
+      </p>
+
+      <p>
+        <strong class="cars-text post-text"><%= @event.group.university.capitalize %></strong><br>
+        <span class="card-text post-text"><%= @event.group.university %></span>
+      </p>  
+
+    <% if current_group == @event.group %>
+      <hr>
+      <div class="btn-holder">
+        <%= link_to 'Edit', edit_event_path(@event), :class => "new-event-btn btn waves-effect waves-light blue accent-4" %>
+        
+        <%= link_to 'Back', events_path, :class => "new-event-btn btn waves-effect waves-light blue accent-4" %>
+      </div>
+      
+    <% end %>
+  </div>
+</div>

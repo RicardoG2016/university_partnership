@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
+  searchkick
+  
   belongs_to :group
-
   validates :name, presence: true
   validates :address, presence: true
   validates :description, presence: true

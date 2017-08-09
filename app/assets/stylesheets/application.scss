@@ -21,6 +21,13 @@
  */
 @import "materialize";
 
+/*Google Iconcs*/
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.pink200 { color: #FF4081; }
+
 
 body, h1, h2, h3, h4, h5 {
   color: #555 !important;
@@ -58,84 +65,9 @@ span > a:hover {
  color: #00897b !important;
 }
 
- .page-spacing {
+.page-spacing {
   padding: 2%;
   margin: auto;
- }
-
- .navbar {
-  position: absolute;
-  height: 86px;
-  background: #fff;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-  width: 100%;
- }
-
- .navbar-nav {
-  width: 100%;
- }
-
- .landing-navbar-nav {
-  margin-left: 85%;
- }
-
-a.navbar-brand > img {
-  vertical-align: text-bottom;
-  margin-left: 10px;
-}
-
- a.nav-link {
-  text-decoration: none;
-  color: #01579b;
-  padding-left: 0 !important;
-}
-
-li.nav-item {
-  margin: auto;
-}
-
-li.landing-page {
- margin-left: 10px; 
-}
-
-.grid {
-  text-decoration: none !important;
-}
-
-.nav-icons {
-  color: #0277bd;
-}
-
-/*Google Iconcs*/
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
-.material-icons.pink200 { color: #FF4081; }
-
-.nav-header {
-  position: absolute;
-}
-
-.search-bar {
-  margin: auto;
-  position: relative;
-  padding: 0 30px;
-  width: 100%;
-  margin-top: 15px;
-  margin-left: 130px;
-}
-
-.search-bar input {
-  text-align: center;
-  width: 100%;
-  height: 50px;
-  border-width: 1px;
-  border-radius: 2px;
-  padding: 2px;
-  border-style: none !important;
-  box-shadow: 0px 0px 2px 2px #eff2f3;
-  background-color: white;
 }
 
 .result-title {
@@ -153,7 +85,22 @@ li.landing-page {
 .header {
   text-align: center !important;
   padding: 20px;
-  margin-top: 70px;
+  margin-top: 30px;
+}
+
+.new-header {
+  text-align: center !important;
+  padding: 20px;
+}
+
+.btn-holder {
+  margin-top: 25px;
+  margin-left: 30px;
+}
+
+a.new-event-btn.btn.waves-effect.waves-light.blue.accent-4 {
+  padding: 10px;
+  margin-right: 10px;
 }
 
 #login-header {
@@ -187,6 +134,3 @@ div.picker__holder {
     }
 }
 
-.nav-link > a:hover {
-  background-color: none !important;
-}

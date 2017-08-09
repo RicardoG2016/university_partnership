@@ -5,5 +5,6 @@ class Group < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
-  has_many :events, dependent: :destroy      
+  has_many :events, dependent: :destroy 
+  validates :university, presence: true, uniqueness: true    
 end
