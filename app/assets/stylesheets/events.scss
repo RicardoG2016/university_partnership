@@ -1,3 +1,52 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event-card {
+  height: 250px;
+}
+
+.event-title {
+  padding: 5px; 
+  font-size: 21px;
+  height: 70px;
+}
+
+h4.event-title.card-title {
+  overflow-y: scroll;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.event-text {
+  font-size: 15px;
+  text-align: left;
+}
+
+p.event-text {
+  overflow-y: scroll;
+  white-space: nowrap;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.event-header {
+  text-align: center;
+}
+
+
+.event-search {
+  margin: auto;
+  margin-left: 0 !important;
+}
+
+/*.events#effects:hover {
+  background-color: #f3e5f5;
+  color: #d500f9;
+  font-weight: bolder;
+
+  a {
+    color: #d500f9;
+    font-weight: bolder;    
+  }
+}*/

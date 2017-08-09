@@ -1,17 +1,15 @@
 <div class="album text-muted col-md-12 row"> 
   <% if @post.length > 0 %>
     <div class=" search-results col-md-12">
-      <h2 class="text-muted result-title">Post Results</h2>
+      <h2 class="text-muted result-title header">Post Results</h2>
       <hr>
     </div>
     <hr>
     <% @post.each do |p| %>
       <div class="col-md-12">
-        <div class="posts col-md-7">
-          <br>
+        <div class="posts col-md-7"> 
           <p class="card-text post-text"><%= link_to p.body, p %></p>
           <p class="card-text post-text">By: <%= link_to p.group.university, group_path(p.group) %></p>
-          <br>
         </div>
       </div>
     <% end %>
@@ -20,20 +18,15 @@
   <br>
   <% if @group.length > 0 %>
   <br>
-  <br>
-  <br>
-  <br>
     <div class=" search-results col-md-12">
-      <h2 class="text-muted result-title">Group Results</h2>
+      <h2 class="text-muted result-title header">Group Results</h2>
       <hr>
     </div>
     <hr>
     <% @group.each do |g| %>
       <div class="col-md-12">
         <div class="posts col-md-7">
-          <br>
-          <p class="card-text post-text"><%= link_to g.university, g %></p>
-          <br>
+          <p class="card-text post-text"><%= link_to g.university, g %></p>        
         </div>
       </div>
     <% end %>

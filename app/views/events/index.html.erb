@@ -2,14 +2,11 @@
   <div class="header">
     <h1 class="event-header text-muted">Scheduled Events</h1>  
   </div>
-  <br>
-  <br>
   <div class="text-muted col-md-12 row">
     <% if @events.length > 0 %>
-
       <% @events.each do |event|%>
         <div class="col-md-4 col-sm-12">
-          <div class="card event-card">
+          <div class="card event-card events" id="effects">
             <div class="card-block event-block">
               <span> <%= event.name %></span>
               <hr>

@@ -12,8 +12,6 @@
  *
 
 @import "bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
 *= require pickadate/classic
 *= require pickadate/classic.date
 *= require pickadate/classic.time
@@ -21,9 +19,41 @@
  */
 @import "materialize";
 
+
 body, h1, h2, h3, h4, h5 {
   color: #555 !important;
   font-family: 'Quicksand', sans-serif !important;
+}
+
+body {
+  height: 100vh !important;
+  background-color: #f5f5f5 !important;
+}
+
+h3 > a {
+  text-decoration: none;
+  color: #555;
+  font-weight: bolder !important;
+}
+
+h3 > a:hover {
+  color: #00897b !important;
+  font-weight: bolder !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+span > a {
+ text-decoration: none !important;
+ color: #555;
+}
+
+span > a:hover {
+ text-decoration: none !important;
+ color: #00897b !important;
 }
 
  .page-spacing {
@@ -33,7 +63,7 @@ body, h1, h2, h3, h4, h5 {
 
  .navbar {
   position: absolute;
-  height: 70px;
+  height: 86px;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
   width: 100%;
@@ -54,7 +84,7 @@ a.navbar-brand > img {
 
  a.nav-link {
   text-decoration: none;
-  color: #757575;
+  color: #01579b;
   padding-left: 0 !important;
 }
 
@@ -71,7 +101,7 @@ li.landing-page {
 }
 
 .nav-icons {
-  color: #0d723b;
+  color: #0277bd;
 }
 
 /*Google Iconcs*/
@@ -121,11 +151,17 @@ li.landing-page {
 .header {
   text-align: center !important;
   padding: 20px;
+  margin-top: 70px;
+}
+
+#login-header {
+  margin: 35px 0px;
 }
 
 .container-content {
-  margin: 5%;
+  /*margin: 5%;*/
   margin-top: 0;
+  background-color: #f5f5f5;
   padding-right: 31px;
 }
 

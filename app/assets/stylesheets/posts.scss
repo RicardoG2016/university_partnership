@@ -6,14 +6,56 @@
   transition: box-shadow 0.9s ease;
   padding: 30px !important;
   margin: 2% auto;
+  margin-top: 0;
+  margin-bottom: 0;
   border: solid 1px #e0e0e0;
   border-radius: 2px;
   width: 50%;
   text-decoration: none !important;
+  background-color: white;
 }
 
 .posts img {
   width: 100%;
+}
+
+.home-feed {
+  padding: 5%;
+  padding-top: 5px;
+}
+
+.feed {
+  margin: auto;
+}
+
+#side-feed {
+  width: 100%;
+  height: 100%;
+  /*margin: auto;*/
+  /*margin-top: 5%;*/
+  padding: 0px 15px;
+}
+
+#side-feed-header.header {
+  font-weight: bolder;
+}
+
+#feed-header.header {
+  font-weight: bolder;
+}
+
+#feed-header, #side-feed-header {
+  text-align: center;
+/*  padding-top: 0;
+  margin-top: 0;*/
+}
+
+#feed-header.header, #side-feed-header.header {
+  margin-top: 20px;
+}
+
+ul.collection.with-header {
+  margin: 0;
 }
 
 .thumb {
@@ -25,21 +67,31 @@
   text-align: left;
 }
 
-.edit-icons {
-  display: none;
-  float: right;  
-}
-
 i.material-icons.edit-icon {
+  display: none;
+  float: right; 
   color: #757575;
   width: 30px;
 }
 
-div.posts.col-md-7:hover {
-  box-shadow: rgba(0, 0, 0, 0.12) 3px 7px 7px, rgba(0, 0, 0, 0.12) 10px 10px 10px;
+  i.delete-icon:hover {
+    color: red !important;
+  }
 
-  .edit-icons {
+#effects:hover {
+  box-shadow: rgba(0, 0, 0, 0.12) 3px 7px 7px, rgba(0, 0, 0, 0.12) 10px 10px 10px;
+  /*background-color: #e0f2f1;*/
+  background-color: #e1f5fe;
+
+  i.material-icons.edit-icon {
     display: inline;
     float: right;
+    color: #0091ea;
   }
+
+  a {
+    color: #0091ea !important;
+  } 
+
+
 }

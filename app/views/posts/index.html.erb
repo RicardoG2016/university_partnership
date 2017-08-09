@@ -1,27 +1,39 @@
-<div class="album text-muted col-md-12 row">
-  <% if @post.length > 0 %>
-    <% @post.each do |p| %>  
-      <div class="posts col-md-7">                                  
-      <%= link_to post_path(p) do %>
-        <div>
-          <div class="edit-icons">        
-            <% if p.group == current_group %>
-              <%= link_to edit_post_path(p), :method => :get do %>
-                <i class="material-icons edit-icon">edit_mode</i>
+<div class="home-feed row">
+  <div class="feed text-muted col-md-7">
+    <% if @post.length > 0 %>
+    <h4 id="feed-header" class="header">Current Feed</h4> 
+      <% @post.each do |p| %>  
+        <div id="effects" class="posts col-md-12">                                  
+        <%= link_to post_path(p) do %>
+          <div>
+            <div class="edit-icons">        
+              <% if p.group == current_group %>
+                <%= link_to edit_post_path(p), :method => :get do %>
+                  <i class="material-icons edit-icon">edit_mode</i>
+                <% end %>
+                <%= link_to post_path(p), :method => :delete, data: { confirm: "Are you sure?"} do %>
+                  <i class="material-icons edit-icon delete-icon">delete</i>
+                <% end %>
               <% end %>
-              <%= link_to post_path(p), :method => :delete, data: { confirm: "Are you sure?"} do %>
-                <i class="material-icons edit-icon">delete</i>
-              <% end %>
-            <% end %>
-          </div>
-          <h3 class="card-text post-text"><%= link_to p.body, p, class: "" %></h3>
-          <span class="card-text post-text"><%= link_to p.group.university, group_path(p.group) %></span>    
-          <br>
-        </div>                  
+            </div>
+            <h3 class="card-text post-text"><%= link_to p.body, p, class: "" %></h3>
+            <span class="card-text post-text"><%= link_to p.group.university, group_path(p.group) %></span>    
+          </div>                  
+        <% end %>
+        </div>
       <% end %>
-      </div>
+    <% else %>
+      <p>No Posts yet </p>
     <% end %>
-  <% else %>
-    <p>No Posts yet </p>
-  <% end %>
+  </div>
+  <div id="side-feed" class="col-md-5 text-muted">
+      <h4 id="side-feed-header" class="header">Activity</h4>
+      <ul class="collection">
+        <li class="collection-item">New Event</li>
+        <li class="collection-item">New Post</li>
+        <li class="collection-item">New Comment</li>
+        <li class="collection-item">New Event</li>
+      </ul>
+  </div>
+  
 </div>

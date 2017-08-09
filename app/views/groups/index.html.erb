@@ -1,14 +1,11 @@
 <div class="container">
-
   <div class="header">
     <h1 class="event-header text-muted">Current University Partners</h1>  
   </div>
-  <br>
-  <br>
   <div class="text-muted col-md-12 row"> 
     <% @groups.each do |group|%>
-      <div class="col-md-4 col-sm-12">
-        <div class="card event-card">
+      <div class="col-md-4 col-sm-12" >
+        <div class="card event-card groups" id="effects">
           <div class="card-block event-block">
             <span> <%= group.university %></span>
             <hr>

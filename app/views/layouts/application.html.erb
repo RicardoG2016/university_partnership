@@ -49,25 +49,11 @@
                 <% submit_tag "", name: nil, class: "submit-on-enter" %>
               </p>
             <% end %>
-              <li class="nav-item">                  
-                <a class="nav-link" href="/posts/new">
-                  <i class="material-icons md-36 nav-icons">add_circle</i>
-                <a/>              
-              </li>  
               <li class="nav-item">      
                 <a href="/">
                   <i class="material-icons md-36 nav-icons">notifications</i>
                 </a>
-              </li> 
-                <li class="nav-item">
-                  <a class="nav-link" href="/groups/sign_in">Sign In</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">|</a>
-                </li>              
-                <li class="nav-item">
-                  <a class="nav-link" href="/groups/sign_up">Sign Up</a>
-                </li>     
+              </li>     
             <% else %>
               <ul class="landing-navbar-nav"> 
                 <li class="landing-page">
@@ -99,14 +85,14 @@
                     <i class="material-icons md-36 side-icons">group</i>
                     <span class="side-bar-text">Groups</span>
                   </a>
-                </li>                 
-                <hr>
+                </li>
                 <li>                
                   <a href="/posts/new">
-                    <i class="material-icons md-36 side-icons">add_circle</i>
+                    <i class="material-icons md-36 side-icons">add_circle_outline</i>
                     <span class="side-bar-text">Add Post</span>
                   </a>
-                </li>
+                </li>                 
+                <hr>
                 <li>                
                   <a href="/posts/new">
                     <i class="material-icons md-36 side-icons">notifications</i>
@@ -123,6 +109,12 @@
                   <a href="/events">
                       <i class="material-icons md-36 side-icons">event</i>
                       <span class="side-bar-text">Events</span>                
+                  </a>
+                </li>
+                <li>                
+                  <a href="/events/new">
+                    <i class="material-icons md-36 side-icons">add_box</i>
+                    <span class="side-bar-text">Add Event</span>
                   </a>
                 </li>
                 <hr>              
