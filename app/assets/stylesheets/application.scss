@@ -12,6 +12,8 @@
  *
 
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 *= require pickadate/classic
 *= require pickadate/classic.date
 *= require pickadate/classic.time
@@ -183,4 +185,8 @@ div.picker__holder {
         margin-top: -78px;
         margin-left: 65px;
     }
+}
+
+.nav-link > a:hover {
+  background-color: none !important;
 }

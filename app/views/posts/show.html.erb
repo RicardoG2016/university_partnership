@@ -1,3 +1,6 @@
+      <br>
+      <br>
+      <br>
 <div class="album text-muted col-md-12 row"> 
   <div class="posts col-md-7">
     <div class="edit-icons">
@@ -10,19 +13,17 @@
         <% end %>
       <% end %>
     </div>
-      <h3 class="cars-text post-text"><%= link_to @post.body, @post %></h3>
-      <span class="card-text post-text">
-        <%= @post.group.university %>
-      </span>
+      <h3 class="cars-text post-text"><%= @post.body.capitalize %></h3>
+      <span class="card-text post-text"><%= @post.group.university %></span>
       <% if @comments %>
         <h3 class="card-text post-text comment-title">Comments</h3>
       <% end %>
       <% @comments.each do |comment| %>
-        <p class="card-text post-text"><%= comment.content %> </p>
-        <p class="card-text post-text comment-header"><%= comment.group.university %> - <%= comment.created_at.strftime("%m/%d/%Y") %> </p>
+        <p class="card-text post-text"><%= comment.content.capitalize %> </p>
+        <span class="card-text post-text comment-header"><%= comment.group.university %> - <%= comment.created_at.strftime("%m/%d/%Y") %> </span>
         <hr>
-        <!-- <br> -->
-      <% end %>  
+      <% end %> 
+      <br> 
       <%= render 'comments/form' %>
   </div>
 </div>
