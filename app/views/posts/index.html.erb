@@ -26,7 +26,8 @@
               <% end %>
             </div>
             <h3 class="card-title"><%= link_to p.body.capitalize, p, class: "" %></h3>
-            <span class="card-text post-text"><%= link_to p.group.university, group_path(p.group) %></span>    
+            <span class="card-text post-text"><%= link_to p.group.university, group_path(p.group) %></span><br> 
+            <span class="btn btn-default"><i class="material-icons">thumb_up</i> <%=p.votes_for.count%></span>  
           </div>                  
         <% end %>
         </div>
