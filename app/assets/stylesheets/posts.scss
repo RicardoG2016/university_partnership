@@ -63,7 +63,7 @@ ul.collection.with-header {
 }
 
 .post-text, .post-title {
-  padding: 30px;
+  padding: 15px 0px;
   text-align: left;
 }
 
@@ -89,7 +89,7 @@ i.material-icons.edit-icon {
     color: #0091ea;
   }
 
-  a {
+  a, span, p {
     color: #0091ea !important;
   } 
 }

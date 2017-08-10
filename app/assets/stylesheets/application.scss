@@ -39,7 +39,7 @@ body {
   background-color: #f5f5f5 !important;
 }
 
-h3 > a {
+h3 > a, {
   text-decoration: none;
   color: #555;
   font-weight: bolder !important;
@@ -55,7 +55,7 @@ a:hover {
   text-decoration: none !important;
 }
 
-span > a {
+span > a, p > a {
  text-decoration: none !important;
  color: #555;
 }
@@ -112,6 +112,10 @@ a.new-event-btn.btn.waves-effect.waves-light.blue.accent-4 {
   margin-top: 0;
   background-color: #f5f5f5;
   padding-right: 31px;
+}
+
+.strong {
+  font-size: 18px;
 }
 
 /*date and time picker */

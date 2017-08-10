@@ -1,35 +1,49 @@
-<div class="album text-muted col-md-12 row"> 
-  <% if @post.length > 0 %>
-    <div class=" search-results col-md-12">
-      <h2 class="text-muted result-title header">Post Results</h2>
-      <hr>
-    </div>
-    <hr>
-    <% @post.each do |p| %>
-      <div class="col-md-12">
-        <div class="posts col-md-7"> 
-          <p class="card-text post-text"><%= link_to p.body, p %></p>
-          <p class="card-text post-text">By: <%= link_to p.group.university, group_path(p.group) %></p>
-        </div>
+<div class="container text-muted col-md-12 row"> 
+
+<!-- post results -->
+    <% if @post.length > 0 %>
+      <div class=" search-results col-md-12">
+        <h2 class="text-muted result-title header">Post Results</h2>
       </div>
-    <% end %>
-    <hr>
-  <% end %>
-  <br>
+      <% @post.each do |p| %>
+        <div class="col-md-12">
+          <div id="effects" class="posts col-md-7"> 
+            <h3 class="card-title"><%= link_to p.body, p %></h3>
+            <span class="">Created: <%= p.created_at.strftime("%m/%d/%Y at %l:%M%P") %></span><br>
+            <p class="">By: <%= link_to p.group.university, group_path(p.group) %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>  
+
+<!-- group results -->
   <% if @group.length > 0 %>
-  <br>
     <div class=" search-results col-md-12">
       <h2 class="text-muted result-title header">Group Results</h2>
-      <hr>
     </div>
-    <hr>
-    <% @group.each do |g| %>
+    <% @group.each do |e| %>
       <div class="col-md-12">
-        <div class="posts col-md-7">
-          <p class="card-text post-text"><%= link_to g.university, g %></p>        
+        <div id="effects" class="posts col-md-7">
+          <h3 class="card-title"><%= link_to e.group.university, e %></h3>
+          <span class="card-text post-text">Created: <%= p.created_at.strftime("%m/%d/%Y at %l:%M%P") %></span>
         </div>
       </div>
     <% end %>
-    <hr>
+  <% end %>
+
+<!-- event results -->
+  <% if @event.length > 0 %>
+    <div class=" search-results col-md-12">
+      <h2 class="text-muted result-title header">Event Results</h2>
+    </div>
+    <% @event.each do |e| %>
+      <div class="col-md-12">
+        <div id="effects" class="posts col-md-7">
+          <h3 class="card-title"><%= link_to e.name, e %></h3>
+          <span class="card-text post-text">Created: <%= e.created_at.strftime("%m/%d/%Y at %l:%M%P") %></span><br>
+          <p class="card-text post-text">By: <%= link_to e.group.university, e %></p>     
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

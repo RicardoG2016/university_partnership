@@ -1,8 +1,15 @@
 .card-title, .card-text {
   margin: auto;
-  text-align: center;
+  text-align: left;
   width: 100%;
 }
+
+.card-title {
+margin-top: 0px;
+margin-bottom: 15px;
+}
+
+
 
 .card {
   height: 120px;
