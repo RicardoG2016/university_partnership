@@ -38,10 +38,12 @@
   <div id="side-feed" class="col-md-5 text-muted">
       <h3 id="side-feed-header" class="header">Activity</h4>
       <ul class="collection">
+        <%if !Post.last.blank?%>
 <!--         <li class="collection-item">
           <span><%= Post.last.body %></span><br>
           <span><%= Post.last.group.university %></span>
         </li> -->
+        <%end%>
         <li class="collection-item">New Post</li>
         <li class="collection-item">New Comment</li>
         <li class="collection-item">New Event</li>
