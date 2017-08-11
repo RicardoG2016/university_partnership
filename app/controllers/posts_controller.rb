@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy] 
+  before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote] 
   before_action :authenticate_group!
 
 def search
@@ -40,7 +40,7 @@ def create
   @post = current_group.posts.build(post_params)
 
   if @post.save
-    redirect_to @post
+    redirect_to '/'
   else
     render 'new'
   end
@@ -59,6 +59,11 @@ def destroy
   # @post = Post.find(params[:id])
   @post.destroy
   redirect_to '/'
+end
+
+def upvote
+  @post.upvote_by current_group
+  redirect_to @post
 end
 
 private
