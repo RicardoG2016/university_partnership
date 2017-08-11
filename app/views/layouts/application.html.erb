@@ -4,6 +4,7 @@
     <title>UniversityPartnership</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= action_cable_meta_tag %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -50,6 +51,13 @@
                 <% submit_tag "", name: nil, class: "submit-on-enter" %>
               </p>
             <% end %>
+              <li>
+                <a>
+                  <i class="blue-text">
+                    <span id="session">Logged in as: <%= current_group.university %></span>                    
+                  </i>
+                </a>
+              </li>
               <li class="nav-item">      
                 <a href="/">
                   <i class="material-icons md-36 nav-icons">notifications</i>

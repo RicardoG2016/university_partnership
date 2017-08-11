@@ -51,7 +51,7 @@ li.landing-page {
   margin: auto;
   position: relative;
   padding: 0 30px;
-  width: 100%;
+  width: 50%;
   margin-top: 15px;
   margin-left: 130px;
 }
@@ -70,4 +70,9 @@ li.landing-page {
 
 .nav-link > a:hover {
   background-color: none !important;
+}
+
+i.blue-text > span#session {
+  padding-top: 5px;
+  font-size: 12px !important;
 }
