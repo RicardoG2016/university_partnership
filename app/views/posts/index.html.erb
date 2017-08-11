@@ -26,7 +26,9 @@
               <% end %>
             </div>
             <h3 class="card-title"><%= link_to p.body.capitalize, p, class: "" %></h3>
-            <span class="card-text post-text"><%= link_to p.group.university, group_path(p.group) %></span><br>
+
+            <span class="card-text post-text"><%= link_to p.group.university, group_path(p.group) %></span><br>             
+            <hr>
             <%if p.liked_by current_group%>
               <%= link_to dislike_post_path(p), :method => :put do%>
                 <div class="btn btn-default active"><i class="material-icons">thumb_up</i> <%=p.get_upvotes.size%></div>
@@ -44,6 +46,7 @@
       <p>No Posts yet </p>
     <% end %>
   </div>
+
   <div id="side-feed" class="col-md-5 text-muted">
       <h3 id="side-feed-header" class="header">Activity</h4>
       <ul class="collection">
