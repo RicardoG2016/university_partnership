@@ -19,7 +19,7 @@
 //= require pickadate/picker.time
 //= require turbolinks
 //= require materialize-sprockets
-//= require_tree .
+//= require_tree ./channels
 //= require_*
 
 $(document).ready(function() {   

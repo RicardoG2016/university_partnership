@@ -1,0 +1,18 @@
+
+  <p
+    <% if message.group == @other_group %>
+       id="mine"
+    <% else %>
+      id="other"
+    <% end %>
+  >
+  
+    <% if message.group == current_group %>
+      <strong class="chat-text"><%= message.group.university %> : <%= message.content %><br></strong>
+      <span>Send at: <%= message.created_at.strftime("%l:%M%P") %><span> 
+    <% else %>
+      <strong class="chat-text"><%= message.group.university %> : <%= message.content %><br></strong>
+      <span>Send at: <%= message.created_at.strftime("%l:%M%P") %><span>
+    <% end %>
+  </p>  
+
