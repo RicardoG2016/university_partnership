@@ -40,7 +40,7 @@ def create
   @post = current_group.posts.build(post_params)
 
   if @post.save
-    redirect_to @post
+    redirect_to '/'
   else
     render 'new'
   end
