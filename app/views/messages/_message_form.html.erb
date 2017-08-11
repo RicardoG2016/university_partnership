@@ -6,8 +6,8 @@
   <%= form_for message, remote: true,authenticity_token: true do |f|%>
       <div class="row">
         <div class="input-field col s6">
-          <%= f.text_area :content, data: {textarea: "message"}, class: "" %>
           <%= f.hidden_field :chat_id, value: chat.id %>
+          <%= f.text_area :content, data: {textarea: "message"}, class: "" %>
         </div>
       </div>
       <p>
