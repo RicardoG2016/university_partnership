@@ -11,9 +11,6 @@
         <%= link_to post_path(@post), :method => :delete, data: { confirm: "Are you sure?"} do %>
           <i class="material-icons edit-icon delete-icon">delete</i>
         <% end %>
-        <%= link_to like_post_path(@post), :method => :put do%>
-          <span class="btn btn-default"><i class="material-icons">thumb_up</i> <%=@post.votes_for.count%></span>
-        <% end %>
       <% end %>
     </div>
       <h3 class="cars-text post-text"><%= @post.body.capitalize %></h3>
@@ -28,5 +25,14 @@
       <% end %> 
       <br> 
       <%= render 'comments/form' %>
+      <%if @post.liked_by current_group%>
+        <%= link_to dislike_post_path(@post), :method => :put do%>
+          <div class="btn btn-default"><i class="material-icons">thumb_up</i> <%=@post.get_upvotes.size%></div>
+        <% end %>
+      <%else%>
+        <%= link_to like_post_path(@post), :method => :put do%>
+          <div class="btn btn-default"><i class="material-icons">thumb_up</i> <%=@post.get_upvotes.size%></div>
+        <% end %>
+      <%end%>
   </div>
 </div>
