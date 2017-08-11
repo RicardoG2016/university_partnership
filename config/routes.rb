@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :groups
   get 'groups/index'
 
-  resources :groups, :events
+  resources :events
+  resources :groups do
+    resources :chat, only: [:index, :show, :create]
+  end
+
 
   resources :posts do
     collection do 
