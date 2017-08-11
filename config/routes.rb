@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   root 'home#index'
   
   # For chat to work set chat index as root file 
-  # root 'chat#index'
+  # root 'chats#index'
 
 end

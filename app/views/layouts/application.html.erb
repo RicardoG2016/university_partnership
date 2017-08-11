@@ -51,6 +51,7 @@
                 <% submit_tag "", name: nil, class: "submit-on-enter" %>
               </p>
             <% end %>
+
               <li>
                 <a>
                   <i class="blue-text">
@@ -109,7 +110,7 @@
                   </a>
                 </li>                   
                 <li>                
-                  <a href="#">
+                  <a href="/groups/<%= current_group.id%>/chats">
                     <i class="material-icons md-36 side-icons">mail</i>
                     <span class="side-bar-text">Messages</span>
                   </a>
@@ -157,11 +158,25 @@
             <% end %>
               <p class="notice"><%= notice %></p>
               <p class="alert"><%= alert %></p> 
-              <%= yield %>                       
+
+              <%= yield %>  
+
+              <!-- Chat button -->
+              <% if current_group %>
+                <div class="fixed-action-btn horizontal click-to-toggle">
+                  <a href="/groups/<%= current_group.id %>/chats" class="btn-floating btn-large green accent-3">
+                    <i class="material-icons">chat</i>
+                  </a>
+                </div>  
+              <% end %>
+              <!--  -->
+
               <p id="demo"></p>
+
             </div>
         </div>
     </div>
+
 <!--     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
