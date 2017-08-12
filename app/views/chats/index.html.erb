@@ -1,0 +1,32 @@
+<div class="container">
+<br>
+<br>
+<br>
+<br>
+  <ul>
+ <% if @existing_chats_groups %>
+   <% @existing_chats_groups.each do |other_group| %>
+    <% if other_group != current_group %>
+      <li>
+        <%= link_to(group_chats_path(current_group, :other_group => other_group.id), method: :post) do %>
+        <%= other_group.university %>
+        <% end %>
+      </li>
+     <% end %>
+   <% end %>
+  <% end %>
+</ul>
+All groups:
+<ul>
+  <% Group.all.each do |other_group| %>
+   <% if other_group != current_group %>
+     <li>
+       <%= link_to(group_chats_path(current_group, :other_group => other_group.id), method: :post) do %>
+       <%= other_group.university %>
+       <% end %>
+     </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= link_to "Logout", destroy_group_session_path(current_group.id), method: :delete  %>  
+</div>
