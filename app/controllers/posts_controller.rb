@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote] 
+  before_action :find_post, only: [:show, :edit, :update, :destroy, :like, :unlike] 
   before_action :authenticate_group!
 
 def search
@@ -61,17 +61,13 @@ def destroy
   redirect_to '/'
 end
 
-def upvote
-  # binding.pry
-  @post.upvote_by current_group
-  binding.pry
-  puts "Post id:#{@post.id} vote count is now #{@post.get_upvotes.size} -upvote-"
+def like
+  current_group.like!(@post)
   redirect_back(fallback_location: root_path)
 end
 
-def downvote
-  @post.downvote_by current_group
-  puts "Post id:#{@post.id} vote count is now #{@post.get_upvotes.size} -downvote-"
+def unlike
+  current_group.unlike!(@post)
   redirect_back(fallback_location: root_path)
 end
 
