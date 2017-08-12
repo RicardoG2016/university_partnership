@@ -16,6 +16,15 @@
       <h3 class="cars-text post-text"><%= @post.body.capitalize %></h3>
       <span class="card-text post-text"><%= @post.group.university %></span>
       <hr>
+      <%if @post.liked_by?(current_group)%>
+        <%= link_to unlike_post_path(@post), :method => :put do %>
+          <span class="btn btn-default"><i class="material-icons">thumb_up</i> <%=@post.likers(Group).count%></span>
+        <% end %>
+      <%else%>
+        <%= link_to like_post_path(@post), :method => :put do %>
+          <span class="btn btn-default"><i class="material-icons">thumb_up</i> <%=@post.likers(Group).count%></span>
+        <% end %>
+      <%end%>
       <% if @comments %>
         <h3 class="card-text post-text comment-title">Comments</h3>
       <% end %>
