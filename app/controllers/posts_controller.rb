@@ -64,6 +64,7 @@ end
 def upvote
   # binding.pry
   @post.upvote_by current_group
+  binding.pry
   puts "Post id:#{@post.id} vote count is now #{@post.get_upvotes.size} -upvote-"
   redirect_back(fallback_location: root_path)
 end

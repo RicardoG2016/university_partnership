@@ -1,4 +1,5 @@
 class Group < ApplicationRecord
+  # acts_as_voter
   searchkick
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable 
