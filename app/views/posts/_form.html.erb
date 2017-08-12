@@ -2,12 +2,11 @@
 <br>
 <br>
 <br>
-<br>
-  <%= form_for(@post) do |p| %>
+  <%= form_for(@post, :id => "formValidate", :class => "formValidate") do |p| %>
       <div class="row">
-        <div class="input-field col s6">
-          <%= p.label :body %>
-          <%= p.text_field :body %>
+        <div class="form-inputs input-field col s6">          
+          <label data-error="wrong" data-success="right">Body</label>
+          <%= p.text_field :body, :type => "text", :class => "validate" %>
         </div>
       </div>
       <p>

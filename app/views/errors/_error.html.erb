@@ -1,0 +1,13 @@
+<!-- Error Messages -->
+<% if cause.errors.any? %>
+  <div id="error_explanation">
+    <i class="material-icons md-24 error-icon right">close</i>
+    <br>
+    <h2><%= pluralize(cause.errors.count, "error") %> prohibited this article from being saved:</h2>
+    <ul>
+    <% cause.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

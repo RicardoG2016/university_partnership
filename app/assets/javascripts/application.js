@@ -23,8 +23,7 @@
 //= require_tree ./channels
 //= require_*
 
-$(document).ready(function() {  
-  Materialize.updateTextFields() 
+$(document).ready(function() {
   
   $('.submit_on_enter').keydown(function(event) {
     // enter has keyCode = 13, change it if you want to use another button
@@ -52,6 +51,10 @@ $(document).ready(function() {
     autoclose: false, // automatic close timepicker
     ampmclickable: true, // make AM PM clickable
     aftershow: function(){} //Function for after opening timepicker
+  });
+
+  $('body').on('click', '.error-icon', function(e) {
+    $(this).parent().closest('div').hide();
   });
 
 });
