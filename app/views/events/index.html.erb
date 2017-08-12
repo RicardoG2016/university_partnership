@@ -4,11 +4,12 @@
   </div>
   <div class="text-muted col-md-12 row">
     <% if @events.length > 0 %>
-      <% @events.each do |event|%>
+
+      <% @events.each do |event| %>
         <div class="col-md-4 col-sm-12">
           <div class="card event-card events" id="effects">
             <div class="card-block event-block">
-              <span> <%= event.name %></span>
+              <span><%= event.name %></span>
               <hr>
               <div class="event-details">                
                 <p class="card-text event-text">Date: <%= event.date.strftime("%m/%d/%Y") %></p>
@@ -18,15 +19,12 @@
                 <p class="card-text event-text">Description: <%= event.description %></p>
                 <p class="card-text event-text">Hosted by: <%= event.group.university %></p>
                 <br>
+
                 <% if current_group == event.group %>
                   <span><%= link_to 'Edit', edit_event_path(event) %></span>
-                  <span>
-                  <%= link_to 'Delete', event_path(event),
-                          :method => :delete,
-                          data: { confirm: 'Are you sure?' } 
-                  %>              
-                  </span>
+                  <span><%= link_to 'Delete', event_path(event), :method => :delete, data: { confirm: 'Are you sure?' } %></span>
                 <% end %>
+
               </div>
               <br>
             </div>
@@ -36,12 +34,11 @@
 
     <% else %>
 
-      <div class="container center">
+      <div id="center" class="container">
         <h2 class="muted-header header">There are currently no events.</h2>
         <br>
         <br>
         <br>
-        
         <a href="/events/new" class="waves-effect waves-light btn-large green accent-4 text-white">Create Event</a>
       </div>
 
