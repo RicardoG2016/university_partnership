@@ -13,8 +13,8 @@ Rails.application.routes.draw do
       get 'search'
     end
     member do
-      put "like", to: "posts#upvote"
-      put "dislike", to: "posts#downvote"
+      put "like", to: "posts#like"
+      put "unlike", to: "posts#unlike"
     end
     resources :comments
   end
