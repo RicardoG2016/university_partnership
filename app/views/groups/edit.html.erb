@@ -1,5 +1,9 @@
 <h1 class="header">Edit Group</h1>
 
+
+<!-- Error Messages -->
+<%= render partial: 'alerts/error.html.erb', locals: { cause: @group } %>
+
 <%= render 'form' %>
 
 <%= link_to 'Back', groups_path %>

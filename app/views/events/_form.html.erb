@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container col-md-6">
   <%= form_for(@event) do |e| %>
     <% if @event %>
       <div class="row">
@@ -8,13 +8,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="text-field col s6">        
+        <div class="input-field col s6">        
           <%= e.label :date %>
           <%= e.text_field :date, :id => "datepicker" %>
         </div>
       </div>
       <div class="row">
-        <div class="text-field col s6">
+        <div class="input-field col s6">
           <%= e.label :time %>
           <%= e.text_field :time, :id => "timepicker" %>
         </div>
