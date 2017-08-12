@@ -1,4 +1,8 @@
 <div class="container">
+
+  <!-- Error Messages -->
+  <%= render partial: 'errors/error.html.erb', locals: { cause: @event } %>
+
   <h2 class="muted-header header">Create New Event</h2>  
   <%= render 'form' %>
 </div>

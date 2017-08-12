@@ -6,8 +6,8 @@ class Group < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
   has_many :events, dependent: :destroy
-  has_many :messages
-  has_many :subscriptions
+  has_many :messages, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
   has_many :chats, through: :subscriptions
 
   def existing_chat_groups

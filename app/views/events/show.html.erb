@@ -5,7 +5,7 @@
 <div class="album text-muted col-md-12 row"> 
   <div class="posts col-md-7">
       <div class="container">
-        <h2 class="new-header">New Event Created</h2> 
+        <h2 class="new-header">Event</h2> 
       </div>
 
       <p>
@@ -34,16 +34,16 @@
       </p>
 
       <p>
-        <strong class="cars-text post-text"><%= @event.group.university.capitalize %></strong><br>
-        <span class="card-text post-text"><%= @event.group.university %></span>
+        <strong class="cars-text post-text">University</strong><br>
+        <span class="card-text post-text"><%= @event.group.university.capitalize %></span>
       </p>  
 
     <% if current_group == @event.group %>
       <hr>
-      <div class="btn-holder">
-        <%= link_to 'Edit', edit_event_path(@event), :class => "new-event-btn btn waves-effect waves-light blue accent-4" %>
+      <div class="">
+        <%= link_to 'Edit', edit_event_path(@event), :class => "new-event-btn btn waves-effect waves-light green accent-4" %>
         
-        <%= link_to 'Back', events_path, :class => "new-event-btn btn waves-effect waves-light blue accent-4" %>
+        <%= link_to 'Back', events_path, :class => "new-event-btn btn waves-effect waves-light green accent-4" %>
       </div>
       
     <% end %>
