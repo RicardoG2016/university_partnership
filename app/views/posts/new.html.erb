@@ -1,6 +1,7 @@
 <div class="container">
+  <!-- Error Messages -->
+  <%= render partial: 'alerts/error.html.erb', locals: { cause: @post } %>
   <h2 class="header">New Post</h2>  
-
   <%= render 'form' %>
 </div>
 

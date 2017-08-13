@@ -28,8 +28,6 @@
 .material-icons.md-48 { font-size: 48px; }
 .material-icons.pink200 { color: #FF4081; }
 
-
-
 body, h1, h2, h3, h4, h5 {
   color: #555 !important;
   font-family: 'Quicksand', sans-serif !important;
@@ -37,7 +35,6 @@ body, h1, h2, h3, h4, h5 {
 
 body {
   height: 100vh !important;
-  background-color: #f5f5f5 !important;
 }
 
 h3 > a, {
@@ -86,7 +83,7 @@ span > a:hover {
 .header {
   text-align: center !important;
   padding: 20px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .new-header {
@@ -111,7 +108,7 @@ a.new-event-btn.btn.waves-effect.waves-light.blue.accent-4 {
 .container-content {
   /*margin: 5%;*/
   margin-top: 0;
-  background-color: #f5f5f5;
+  /*background-color: #f5f5f5;*/
   padding-right: 31px;
 }
 
@@ -138,4 +135,3 @@ div.picker__holder {
         margin-left: 65px;
     }
 }
-

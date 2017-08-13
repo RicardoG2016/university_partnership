@@ -1,0 +1,9 @@
+<!-- Chat button -->
+<% if current_group %>
+  <div class="fixed-action-btn horizontal click-to-toggle">
+    <a href="/groups/<%= current_group.id %>/chats" class="btn-floating btn-large green accent-3">
+      <i class="material-icons">chat</i>
+    </a>
+  </div>  
+<% end %>
+<!--  -->

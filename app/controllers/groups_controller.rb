@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :find_group, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_group!
 
 # for use with gov api to get school lists
 # ENV['GOV_EDU_API']
@@ -42,7 +43,7 @@ class GroupsController < ApplicationController
     # @group = Group.find(params[:id])
 
     if @group.update(group_params)
-      redirect_to @group
+      redirect_to '/'
     else
       render 'edit'
     end
