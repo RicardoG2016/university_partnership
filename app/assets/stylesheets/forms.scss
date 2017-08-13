@@ -1,9 +1,17 @@
+@import 'colors';
+@import 'mixins';
+
 .form_design {
   margin: auto;
 }
 
 .container.form-style {
-  margin-left: 25%; 
+  @extend .form_design; 
+  width: 70%;
+}
+
+#login-form {
+  @extend .form_design;
   width: 50%;
 }
 
@@ -23,4 +31,8 @@ div.col.s12.m12.login-btn {
 #confirm-changes {
   padding-top: 10px;
   padding-bottom: 40px;
+}
+
+.gradient {
+  @include form-gradient;
 }

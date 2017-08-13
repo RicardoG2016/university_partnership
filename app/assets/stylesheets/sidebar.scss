@@ -1,3 +1,6 @@
+@import 'colors';
+@import 'mixins';
+
 body {
     overflow-x: hidden;
  }
@@ -24,16 +27,11 @@ body {
     height: 100%;
     margin-left: -220px;
     overflow-y: auto;
-    background: #039be5;
-    /*background: #7e57c2;*/
+    @include main-gradient;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    width: 220px;
 }
 
 #page-content-wrapper {
@@ -41,6 +39,10 @@ body {
     position: absolute;
     padding: 15px;
     margin-left: 55px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 220px;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -54,7 +56,7 @@ body {
     position: absolute;
     top: 0;
     width: 220px;
-    margin: 33px 0 0 0;
+    margin: 86px 0 0 0;
     padding: 0;
     list-style: none;
 }
