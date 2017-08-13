@@ -18,6 +18,7 @@
 a.navbar-brand > img {
   vertical-align: text-bottom;
   margin-left: 10px;
+  position: fixed;
 }
 
  a.nav-link {
@@ -51,7 +52,7 @@ li.landing-page {
   margin: auto;
   position: relative;
   padding: 0 30px;
-  width: 50%;
+  width: 850px;
   margin-top: 15px;
   margin-left: 130px;
 }
@@ -76,3 +77,14 @@ i.blue-text > span#session {
   padding-top: 5px;
   font-size: 12px !important;
 }
+
+a > li.nav-item:hover {
+  background-color: none !important;
+}
+
+div.collapse.navbar-collapse {
+  margin-left: auto;
+  width: initial;
+}
+
+

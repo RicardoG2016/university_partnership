@@ -18,18 +18,19 @@
   </div>
   <div class="collapse navbar-collapse">
     <% if current_group %>
-      <ul class="navbar-nav">          
-        <%= form_tag search_posts_path, method: :get, class: "search-bar text-field", role: "search" do %>
+      <ul class="navbar-nav">
+        <li>
+          <%= form_tag search_posts_path, method: :get, class: "search-bar text-field", role: "search" do %>
           <p>
             <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
             <% submit_tag "", name: nil, class: "submit-on-enter" %>
           </p>
         <% end %>
-
-        <li>
+        </li>                 
+        <li class="nav-item"> 
           <a>
             <i class="blue-text">
-              <span id="session">Logged in as: <%= current_group.university %></span>                    
+              <span id="session"><%= current_group.university %></span>                    
             </i>
           </a>
         </li>
@@ -56,7 +57,6 @@
 
 
 <!-- Sidebar -->
-
   <% if current_group %>
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">            
@@ -78,7 +78,6 @@
             <span class="side-bar-text">Add Post</span>
           </a>
         </li>                 
-        <hr>
         <li>                
           <a href="/posts/new">
             <i class="material-icons md-36 side-icons">notifications</i>
