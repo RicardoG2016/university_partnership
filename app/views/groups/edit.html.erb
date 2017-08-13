@@ -1,9 +1,84 @@
-<h1 class="header">Edit Group</h1>
+<div class="container">
+  
+  <!-- Error Messages -->
+  <%= render partial: 'alerts/error.html.erb', locals: { cause: @group } %>
+
+  <h2 class="muted-header header">Edit Group</h2>  
+  
+  <%= link_to groups_path do %>
+    <i class="material-icons md-36">arrow_back</i>
+  <% end %>
 
 
-<!-- Error Messages -->
-<%= render partial: 'alerts/error.html.erb', locals: { cause: @group } %>
+<div class="container col-md-6">
+  <%= form_for(@group) do |f| %>
 
-<%= render 'form' %>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :email %><br />
+        <%= f.email_field :email%>      
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">        
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :university %>
+        <%= f.text_field :university %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :president %>
+        <%= f.text_field :president %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :phone %>
+        <%= f.telephone_field :phone %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :member_count %>
+        <%= f.number_field :member_count %>
+      </div>
+    </div>
 
-<%= link_to 'Back', groups_path %>
+    <div class="row">
+      <div class="password-field col s6">
+      <%= f.label :current_password %><br />
+      <%= f.password_field :current_password, autocomplete: "off", placeholder: "Confirm password to save changes", required: true %>
+      </div>
+    </div>
+    <div style="text-align: left">
+      <h3>Cancel my account</h3>
+    <p class="">If you delete your account you will lose all your data. This can not be undone.</p>
+    <p class="text-muted"><%= link_to "Cancel my account", group_path(@group), :class => "red btn waves-effect waves-light", data: { confirm: "Are you sure?" }, method: :delete %></p>  
+    </div>
+
+      <p>
+        <button class="btn waves-effect waves-light green accent-4" type="submit" name="action">
+          <%= f.submit "Save" %>  
+        </button>          
+      </p>
+  <% end %> 
+</div>
+
+  
+
+</div>

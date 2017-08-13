@@ -1,15 +1,15 @@
-<div class="container col-md-6">
-  <div class="container form_design col-md-5 header">
+<div class="container">
+  <%= devise_error_messages! %>
+  <div class="container col-md-6">
+    <div class="container form_design col-md-5 header">
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= devise_error_messages! %>
-
-        </div>
+    </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>        
+        
       <div class="row">
         <div class="email-field col s6">
           <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, :class => "validate" %>
+          <%= f.email_field :email, autofocus: true %>
         </div>
       </div>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,80 +19,77 @@
       <div class="row">
         <div class="password-field col s6">
           <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off", placeholder: "Leave blank if you don't want to change.", :class => "validate" %>
+          <%= f.password_field :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
           <% if @minimum_password_length %>
             <br />
             <em><%= @minimum_password_length %> characters minimum</em>            
           <% end %>
         </div>
       </div>
-<br />
+        <br />
       <div class="row">
         <div class="password-field col s6">
           <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm new password, otherwise leave blank.", :class => "validate" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", required: false %>
         </div>
       </div>
 
       <div class="row">
         <div class="text-field col s6">
           <%= f.label :university %><br>
-          <%= f.text_field :university, :class => "validate" %>
+          <%= f.text_field :university %>
         </div>
       </div>
 
       <div class="row">
         <div class="telephone-field col s6">
           <%= f.label :phone %><br>
-          <%= f.telephone_field :phone, :class => "validate" %>
+          <%= f.telephone_field :phone %>
         </div>
       </div>
 
       <div class="row">
         <div class="text-field col s6">
           <%= f.label :president %><br>
-          <%= f.text_field :president, :class => "validate" %>
+          <%= f.text_field :president %>
         </div>
       </div>
 
         <div class="row">
           <div class="number-field col s6">
           <%= f.label :member_count %><br>
-          <%= f.number_field :member_count, :class => "validate" %>
+          <%= f.number_field :member_count %>
           </div>
         </div>
 
         <div class="row">
           <div class="password-field col s6">
           <%= f.label :current_password %><br />
-          <%= f.password_field :current_password, autocomplete: "off", placeholder: "Confirm password to save changes", :class => "validate" %>
+          <%= f.password_field :current_password, autocomplete: "off", hint: "we need your current password to confirm your changes", placeholder: "Confirm password to save changes", require: true %>
           </div>
         </div>
       <div style="text-align: left">
-        <h3>Cancel my account</h3>
-      <p class="">If you delete your account you will lose all your data. This can not be undone.</p>
-      <p class="text-muted"><%= button_to "Cancel my account", registration_path(resource_name), :class => "red btn waves-effect waves-light", data: { confirm: "Are you sure?" }, method: :delete %></p>  
+        <strong>Cancel my account</strong>
+        <p class="">This can not be undone. All your data will be deleted.</p>
+          <%= link_to registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete do %>
+            <button class="red btn waves-effect waves-light">
+              Delete
+              <i class="material-icons right btn-icon">warning</i>
+            </button>
+          <% end %>
       </div>
       <br>
       <hr>
-      <br>
-      <br>
-      <br>
-      <div>
+      <div id="confirm-changes">
         <h3>Confirm Changes</h3>
         <br>
-        <div class="actions btn waves-light waves-effect green accent-4">
+        <button class="btn waves-light waves-effect green accent-4">
           <%= f.submit "Save" %>
-        </div>  
-      <br>
-      <br>
-      <br>
-      <br>
+          <i class="material-icons right btn-icon">send</i>
+        </button>  
       </div>
-      
-
     <% end %>
   </div>  
+  </div>
 </div>
-
 

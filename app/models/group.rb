@@ -22,7 +22,7 @@ class Group < ApplicationRecord
   validates :member_count, numericality: { only_integer: true }
   validates :email, presence: true, uniqueness: true
   validates :university, presence: true, uniqueness: true  
-  validates :password, presence: true, length: { minimum: 6 }  
+  # validates :password, presence: true, length: { minimum: 6 }  
   validates :president, presence: true
   validates :phone, presence: true, length: { minimum: 10 }
 end

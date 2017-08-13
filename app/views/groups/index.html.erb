@@ -14,7 +14,7 @@
               <p class="card-text event-text">Phone: <%= group.phone %></p>
               <br>
               <% if current_group == group %>
-                <span><%= link_to 'Edit', edit_group_path(group) %></span>
+                <span><%= link_to 'Edit', edit_group_registration_path(group) %></span>
                 <span>
                 <%= link_to 'Delete', group_path(group),
                         :method => :delete,

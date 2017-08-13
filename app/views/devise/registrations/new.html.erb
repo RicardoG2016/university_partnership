@@ -1,18 +1,16 @@
 <body class="light-blue accent-4">
     <div class="container form-style" style="margin-top:130px;">
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="card-panel m6 z-depth-5">
+      <div class="row">      
+        <div class="col s12 m12">        
+          <div class="card-panel m12 z-depth-5">          
             <h4 id="login-header" class="center">Sign Up</h4>  
-              <div class="row">
-                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |e| %>
-                  <%= devise_error_messages! %>
-                    
+              <div class="row" id="sign-up-form">
+                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |e| %>                  
+                    <%= devise_error_messages! %>
                     <div class="col s12 m12">
                       <div class="row"> 
                         <div class="form-inputs input-field col s12 m12">
-                          <i class="mdi-communication-email prefix"></i>
-                          <%= e.label :email, :id => "icon_email" %>
+                          <%= e.label :email %>
                           <%= e.email_field :email, :class => "validate", :id => "icon_email", autofocus: true %>
                         </div>                          
                       </div>
@@ -20,13 +18,11 @@
 
                     <div class="col s12 m12">
                       <div class="row"> 
-                        <div class="form-inputs input-field col s12 m12">
-                            <i class="mdi-communication-email prefix"></i>                          
+                        <div class="form-inputs input-field col s12 m12">                         
                             <% if @minimum_password_length %>                                                            
                               <%= e.label :password %>
                               <%= e.password_field :password, autofocus: "off", autocomplete: "off", :class => "validate", :placeholder => "#{@minimum_password_length} characters minimum." %>
-                            <% else %>
-                              
+                            <% else %>                              
                               <%= e.password_field :password, autocomplete: "off", :class => "validate" %>
                             <% end %>
                         </div>                          
@@ -34,10 +30,8 @@
                     </div>
 
                     <div class="col s12 m12">
-                      <div class="row">                  
-                        <!-- <div class="password-field col s6"> -->
+                      <div class="row"> 
                         <div class="form-inputs input-field col s12 m12">
-                          <i class="mdi-action-account-circle prefix"></i>
                             <%= e.label :password_confirmation %>
                             <%= e.password_field :password_confirmation, autocomplete: "off", :class => "validate" %>
                         </div>
@@ -46,9 +40,7 @@
 
                     <div class="col s12 m12">
                       <div class="row"> 
-                        <!-- <div class="input-field col s6"> -->
                         <div class="form-inputs input-field col s12 m12">
-                          <i class="mdi-communication-email prefix"></i>
                             <%= e.label :university %>
                             <%= e.text_field :university, :class => "validate" %>
                         </div>                          
@@ -57,9 +49,7 @@
 
                     <div class="col s12 m12">
                       <div class="row"> 
-                        <!-- <div class="input-field col s6"> -->
                         <div class="form-inputs input-field col s12 m12">
-                          <i class="mdi-communication-email prefix"></i>
                             <%= e.label :president %>
                             <%= e.text_field :president, :class => "validate" %>
                         </div>                          
@@ -68,9 +58,7 @@
 
                     <div class="col s12 m12">
                       <div class="row"> 
-                        <!-- <div class="telephone-field col s6"> -->
                         <div class="form-inputs input-field col s12 m12">
-                          <i class="mdi-communication-email prefix"></i>
                             <%= e.label :phone %>
                             <%= e.text_field :phone, :class => "validate" %>
                         </div>                          
@@ -79,30 +67,26 @@
 
                     <div class="col s12 m12">
                       <div class="row"> 
-                        <!-- <div class="number-field col s6"> -->
                         <div class="form-inputs input-field col s12 m12">
-                          <i class="mdi-communication-email prefix"></i>
                             <%= e.label :member_count %>
                             <%= e.number_field :member_count, :class => "validate" %>
                         </div>                          
                       </div>
                     </div>
                                                                                                     
-                    <div class="col s12 m12 login-btn">
+                    <div class="col s12 m12">
                       <div class="row"> 
-                        <div class="actions btn waves-effect waves-light center light-green accent-4">
-                          <%= e.submit "Sign Up" %>
-                        </div>
-                        
+                        <button id="signup-btn" class="btn waves-light waves-effect green accent-4">
+                          <%= e.submit "Save" %>
+                          <i class="material-icons right btn-icon">send</i>
+                        </button> 
                       </div>
-                    </div>                  
-                  <% end %>
-
-            </div><!--col-->  
-          </div><!--col-->
-        </div><!--row-->
-      </div><!--conatiner-->
-    </div><!--row-->
-  <!--card-->
+                    </div>                    
+                <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
                     
