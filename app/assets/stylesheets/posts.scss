@@ -13,6 +13,7 @@
   width: 50%;
   text-decoration: none !important;
   background-color: white;
+  min-width: 403px;
 }
 
 .posts img {
@@ -87,15 +88,32 @@ i.material-icons.edit-icon {
 }
 
 #img-post.row {
-  padding: 0 20px;
   margin: 0;
 }
 
-#img-post > span {
-  max-width: 20%;
+#div#img-post.row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+#img-in-post {
+  padding: 0;
+  width: 60px;
 }
 
 #text-post {
-  max-width: 80%;
+  margin-right: auto;
+  padding-left: 10px;
+}
+
+#social {
+  margin-left: auto;
+  min-width: 60px;
+}
+
+.social-btn {
+  margin-right: 7px;
 }
 

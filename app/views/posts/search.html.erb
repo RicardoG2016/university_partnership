@@ -11,6 +11,22 @@
             <h3 class="card-title"><%= link_to p.body, p %></h3>
             <span class="">Created: <%= p.created_at.strftime("%m/%d/%Y at %l:%M%P") %></span><br>
             <p class="">By: <%= link_to p.group.university, group_path(p.group) %></p>
+                        <div id="social">
+              <%if p.liked_by?(current_group)%>
+                <%= link_to unlike_post_path(p), :method => :put, class: "waves-effect social-btn waves-light blue btn" do %>
+                  <i class="material-icons left">favorite</i><%=p.likers(Group).count%>
+                <% end %>
+              <%else%>
+                <%= link_to like_post_path(p), :method => :put, class: "waves-effect social-btn waves-light blue btn" do %>
+                  <i class="material-icons left">favorite</i><%=p.likers(Group).count%>
+                <% end %>
+              <%end%>  
+              <% if current_group != p.group %>
+                <%= link_to post_path(p), class: "waves-effect waves-light social-btn blue btn" do %>
+                  <i class="material-icons left">comment</i><%=p.comments.count%>
+                <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>
