@@ -1,6 +1,6 @@
 # University Partnership App
 
-### Application will allow Rainforest Partnershp to collaborate with university clubs and collaborate in a central location.
+#### Application will allow Rainforest Partnershp to collaborate with universities and students within a central location. The goal is to have multiple universities collaborating towards the efforts of rainforest partnership within the application.
 -  Application currently in development. Screenshots of current progress are shown below.
 
 
