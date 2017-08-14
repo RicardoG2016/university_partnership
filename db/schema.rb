@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812181708) do
+ActiveRecord::Schema.define(version: 20170813232536) do
 
   create_table "chats", force: :cascade do |t|
     t.string "identifier"
@@ -67,11 +67,11 @@ ActiveRecord::Schema.define(version: 20170812181708) do
     t.string "president"
     t.integer "member_count"
     t.string "phone"
-    t.integer "likees_count", default: 0
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.integer "likees_count", default: 0
     t.index ["email"], name: "index_groups_on_email", unique: true
     t.index ["reset_password_token"], name: "index_groups_on_reset_password_token", unique: true
   end
@@ -118,6 +118,22 @@ ActiveRecord::Schema.define(version: 20170812181708) do
     t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.string "votable_type"
+    t.integer "votable_id"
+    t.string "voter_type"
+    t.integer "voter_id"
+    t.boolean "vote_flag"
+    t.string "vote_scope"
+    t.integer "vote_weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+    t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
 end
