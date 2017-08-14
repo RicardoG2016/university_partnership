@@ -1,63 +1,76 @@
-<div class="container header">
-  <h2>Sign up</h2>
-</div>
+<body class="gradient">
+    <div class="container form-style" style="margin:auto">
+      <div class="row">      
+        <div class="col s12 m12">        
+          <div class="card-panel s12 l6 m12 z-depth-5">          
+            <h4 id="login-header" class="center">Sign Up</h4>  
+              <div class="row" id="sign-up-form">
+                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |e| %>                  
+                    <%= devise_error_messages! %>
+                    <div class="col s12 m12">
 
-<div class="container">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |e| %>
-  <%= devise_error_messages! %>
+                      <div class="form-inputs input-field col s12">
+                        <%= e.label :email %>
+                        <%= e.email_field :email, :class => "validate", :id => "icon_email", autofocus: true %>
+                      </div>                          
 
-      <div class="row">
-        <div class="email-field col s6">
-          <%= e.label :email %><br />
-          <%= e.email_field :email, autofocus: true %>      
-        </div>
-      </div>
-      <div class="row">
-        <div class="password-field col s6">        
-          <%= e.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= e.password_field :password, autocomplete: "off" %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="time-field col s6">
-          <%= e.label :password_confirmation %><br />
-          <%= e.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <%= e.label :university %>
-          <%= e.text_field :university %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <%= e.label :president %>
-          <%= e.text_field :president %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="telephone-field col s6">
-          <%= e.label :phone %>
-          <%= e.text_field :phone %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="number-field col s6">
-          <%= e.label :member_count %>
-          <%= e.number_field :member_count %>
-        </div>
-      </div>      
-        <p>
-          <button class="btn waves-effect waves-light green accent-4" type="submit" name="action">
-            <%= e.submit "Save" %>  
-          </button>          
-        </p>
-  <% end %> 
-</div>
+                      <div class="form-inputs input-field col s12 l6 m12">                         
+                        <% if @minimum_password_length %>                                                            
+                          <%= e.label :password %>
+                          <%= e.password_field :password, autofocus: "off", autocomplete: "off", :class => "validate", :placeholder => "#{@minimum_password_length} characters minimum." %>
+                        <% else %>                              
+                          <%= e.password_field :password, autocomplete: "off", :class => "validate" %>
+                        <% end %>
+                      </div>                          
 
-<%= render "devise/shared/links" %>
+                      <div class="form-inputs input-field col s12 l6 m12">
+                          <%= e.label :password_confirmation %>
+                          <%= e.password_field :password_confirmation, autocomplete: "off", :class => "validate" %>
+                      </div>
 
+                      <div class="form-inputs input-field col s12 l6 m12">
+                          <%= e.label :university %>
+                          <%= e.text_field :university, :class => "validate" %>
+                      </div>                          
+
+                      <div class="form-inputs input-field col s12 l6 m12">
+                          <%= e.label :president %>
+                          <%= e.text_field :president, :class => "validate" %>
+                      </div>                          
+
+                      <div class="form-inputs input-field col s12 l6 m12">
+                          <%= e.label :phone %>
+                          <%= e.text_field :phone, :class => "validate" %>
+                      </div>                          
+
+                      <div class="form-inputs input-field col s12 l6 m12">
+                          <%= e.label :member_count %>
+                          <%= e.number_field :member_count, :class => "validate" %>
+                      </div> 
+
+                      <div class="file-field form-input input-field col s12 m12 l6">
+                        <button id="signup-btn" class="btn waves-light waves-effect amber accent-4">
+                          Image
+                          <%= e.file_field :image %>
+                          <i class="material-icons right btn-icon">add_a_photo</i>
+                        </button> 
+
+                      </div>
+                    
+                      <div class="form-input s12 m12 l6">
+                        <button id="signup-btn" class="btn waves-light waves-effect green accent-4 input-field">
+                          <%= e.submit "Save" %>
+                          <i class="material-icons right btn-icon">send</i>
+                        </button> 
+                      </div>                      
+                    </div>                    
+                <% end %>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  <br>
+  <br>
+</body>
+                    

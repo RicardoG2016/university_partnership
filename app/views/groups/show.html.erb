@@ -1,20 +1,40 @@
-<p>
-  <strong>University</strong><br>
-  <%= @group.university.downcase %>
-</p>
- 
- <p>
-  <strong>Phone</strong><br>
-  <%= @group.phone %>
-</p>
-<p>
-  <strong>Email</strong><br>
-  <%= @group.email.downcase %>
-</p>
-<p>
-  <strong>Point of Contact</strong><br>
-  <%= @group.president %>
-</p>
+      <br>
+      <br>
+      <br>
+<div class="album text-muted col-md-12 row"> 
+  <div class="posts col-md-7">
+      <div class="container">
+        <h2 class="new-header"><%= @group.university.capitalize %></h2> 
+      </div>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+      <p>
+        <strong class="cars-text post-text">President</strong><br>
+        <span class="card-text post-text"><%= @group.president %></span>
+      </p>
+
+      <p>
+        <strong class="cars-text post-text">Phone</strong><br>  
+        <span class="card-text post-text"><%= @group.phone %></span>
+      </p>
+
+      <p>
+        <strong class="cars-text post-text">Email</strong><br>
+        <span class="card-text post-text"><%= @group.email.downcase %></span>
+      </p>
+
+      <p>
+        <strong class="cars-text post-text">Current Member</strong><br>
+        <span class="card-text post-text"><%= @group.member_count %></span>
+      </p>  
+
+    <% if current_group == @group %>
+      <hr>
+      <div class="">
+        <%= link_to 'Edit', edit_group_path(@group), :class => "new-event-btn btn waves-effect waves-light green accent-4" %>
+        
+        <%= link_to 'Back', groups_path, :class => "new-event-btn btn waves-effect waves-light green accent-4" %>
+      </div>
+      
+    <% end %>
+  </div>
+</div>

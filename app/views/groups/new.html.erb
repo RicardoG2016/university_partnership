@@ -1,4 +1,8 @@
 <div class="container">
+  
+  <!-- Error Messages -->
+  <%= render partial: 'alerts/error.html.erb', locals: { cause: @group } %>
+
   <h2 class="muted-header header">Create New Group</h2>  
   
   <%= render 'form' %>

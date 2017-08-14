@@ -10,8 +10,8 @@ class Group < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
   has_many :events, dependent: :destroy
-  has_many :messages
-  has_many :subscriptions
+  has_many :messages, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
   has_many :chats, through: :subscriptions
 
   def existing_chat_groups
@@ -23,6 +23,12 @@ class Group < ApplicationRecord
     existing_chat_groups.uniq
   end
 
-
-  validates :university, presence: true, uniqueness: true    
+  validates :member_count, numericality: { only_integer: true }
+  validates :email, presence: true, uniqueness: true
+  validates :university, presence: true, uniqueness: true  
+  # validates :password, presence: true, length: { minimum: 6 }  
+  validates :president, presence: true
+  validates :phone, presence: true, length: { minimum: 10 }
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "50x50>" }, default_url: "school.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end

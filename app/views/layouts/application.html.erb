@@ -1,191 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>UniversityPartnership</title>
+    <title>University Partnership</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= action_cable_meta_tag %>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
+    <!-- Materialize -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   </head>
 
   <body>
-      <nav class=" navbar navbar-toggleable-md fixed-top">
-        <div class="nav-header">
-        <ul class="navbar-nav">
-        <% if current_group %>
-          <a href="#menu-toggle" class="grid" id="menu-toggle">
-            <li class="nav-item">
-              <i class="material-icons md-36 nav-icons">menu</i>
-            </li>
-          </a>
-        <% end %>
-            <a class="" href="/">
-              <li class="nav-item">              
-                <%= image_tag("logo.png", class: "logo", size: "55x45", :alt => "logo") %>           
-              </li>
-            </a>
-        </ul>
-          
-        </div>
-      <div class="collapse navbar-collapse">
-        <% if current_group %>
-          <ul class="navbar-nav">          
-            <%= form_tag search_posts_path, method: :get, class: "search-bar text-field", role: "search" do %>
-              <p>
-                <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
-                <% submit_tag "", name: nil, class: "submit-on-enter" %>
-              </p>
-            <% end %>
-
-              <li>
-                <a>
-                  <i class="blue-text">
-                    <span id="session">Logged in as: <%= current_group.university %></span>                    
-                  </i>
-                </a>
-              </li>
-              <li class="nav-item">      
-                <a href="/">
-                  <i class="material-icons md-36 nav-icons">notifications</i>
-                </a>
-              </li>     
-            <% else %>
-              <ul class="landing-navbar-nav"> 
-                <li class="landing-page">
-                  <a class="nav-link" href="/groups/sign_in">Sign In</a>
-                </li>
-                <li class="landing-page">
-                  <a class="nav-link" href="#">|</a>
-                </li>              
-                <li class="landing-page">
-                  <a class="nav-link" href="/groups/sign_up">Sign Up</a>
-                </li>         
-          <% end %>  
-        </ul> 
-    </nav>
-
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <% if current_group %>
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">            
-                <li>
-                  <a href="/">
-                    <i class="material-icons md-36 side-icons">home</i>
-                    <span class="side-bar-text">Home</span>
-                  </a>
-                </li> 
-                <li>                
-                  <a href="/groups">
-                    <i class="material-icons md-36 side-icons">group</i>
-                    <span class="side-bar-text">Groups</span>
-                  </a>
-                </li>
-                <li>                
-                  <a href="/posts/new">
-                    <i class="material-icons md-36 side-icons">add_circle_outline</i>
-                    <span class="side-bar-text">Add Post</span>
-                  </a>
-                </li>                 
-                <hr>
-                <li>                
-                  <a href="/posts/new">
-                    <i class="material-icons md-36 side-icons">notifications</i>
-                    <span class="side-bar-text">Notifications</span>
-                  </a>
-                </li>                   
-                <li>                
-                  <a href="/groups/<%= current_group.id%>/chats">
-                    <i class="material-icons md-36 side-icons">mail</i>
-                    <span class="side-bar-text">Messages</span>
-                  </a>
-                </li>
-                <li>        
-                  <a href="/events">
-                      <i class="material-icons md-36 side-icons">event</i>
-                      <span class="side-bar-text">Events</span>                
-                  </a>
-                </li>
-                <li>                
-                  <a href="/events/new">
-                    <i class="material-icons md-36 side-icons">add_box</i>
-                    <span class="side-bar-text">Add Event</span>
-                  </a>
-                </li>
-                <hr>              
-                <li>                
-                  <a href="/groups/edit">
-                    <i class="material-icons md-36 side-icons">settings</i>
-                    <span class="side-bar-text">Settings</span>
-                  </a>
-                </li>
-                <hr>
-                <% if current_group %>
-                  <li>
-                    <%= link_to destroy_group_session_path, :method => :delete do %>
-                      <i class="material-icons md-36 side-icons">exit_to_app</i>
-                      <span class="side-bar-text">Logout</span>
-                    <% end %>
-                  </li>
-                <% end %>                
-            </ul>
-        </div>
-        <% end %>
-        <!-- /#sidebar-wrapper -->
-
-              <!-- Page Content -->
-            <% if current_group %>
-              <div id="page-content-wrapper">
-                  <div class="container-content">
-            <% else %>
-              <div>
-                  <div>
-            <% end %>
-              <p class="notice"><%= notice %></p>
-              <p class="alert"><%= alert %></p> 
-
-              <%= yield %>  
-
-              <!-- Chat button -->
-              <% if current_group %>
-                <div class="fixed-action-btn horizontal click-to-toggle">
-                  <a href="/groups/<%= current_group.id %>/chats" class="btn-floating btn-large green accent-3">
-                    <i class="material-icons">chat</i>
-                  </a>
-                </div>  
-              <% end %>
-              <!--  -->
-
-              <p id="demo"></p>
-
-            </div>
-        </div>
-    </div>
-
-<!--     <footer class="text-muted">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-      </div>
-    </footer> -->
     
+      
+    
+<% if current_group %>
+  <%= render 'components/nav' %>
+    <div id="wrapper">  
+      <div id="page-content-wrapper">
+        <div class="container-content">
+  <% else %>
+    <%= render 'components/nav' %>
+      <div>
+        <div>
+  <% end %>                      
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p> 
+          <%= yield %>
+          <%= render 'components/chat_button' %>
+        </div>
+      </div> 
+  </div>  
+          
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script
     src="http://code.jquery.com/jquery-3.2.1.min.js"
@@ -196,15 +50,14 @@
     src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
     integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
     crossorigin="anonymous"></script>
-
-    <script src="https://use.fontawesome.com/a25aff42e9.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 
     <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
               
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    
     <script>
         $("#menu-toggle").click(function(e) {
         e.preventDefault();

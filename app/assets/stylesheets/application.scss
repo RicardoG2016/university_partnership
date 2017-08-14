@@ -28,8 +28,6 @@
 .material-icons.md-48 { font-size: 48px; }
 .material-icons.pink200 { color: #FF4081; }
 
-
-
 body, h1, h2, h3, h4, h5 {
   color: #555 !important;
   font-family: 'Quicksand', sans-serif !important;
@@ -37,7 +35,6 @@ body, h1, h2, h3, h4, h5 {
 
 body {
   height: 100vh !important;
-  background-color: #f5f5f5 !important;
 }
 
 h3 > a, {
@@ -86,7 +83,8 @@ span > a:hover {
 .header {
   text-align: center !important;
   padding: 20px;
-  margin-top: 30px;
+  padding-top: 0px;
+  /*margin-top: 40px;*/
 }
 
 .new-header {
@@ -105,14 +103,12 @@ a.new-event-btn.btn.waves-effect.waves-light.blue.accent-4 {
 }
 
 #login-header {
-  margin: 35px 0px;
+  margin: 10px 0px;
 }
 
 .container-content {
-  /*margin: 5%;*/
   margin-top: 0;
-  background-color: #f5f5f5;
-  padding-right: 31px;
+  padding-right: 9px;
 }
 
 .strong {
@@ -125,17 +121,27 @@ div.picker__holder {
   min-width: 100%;
 }
 
-
-@media screen and (min-width: 992px) {
-    .logo {
-        margin-top: 3px;
-    }
-}
-
 @media screen and (max-width: 991px) {
+    .grid {
+      width: 66px;
+    }
     .logo {
-        margin-top: -78px;
+        margin-top: -113px;
         margin-left: 65px;
     }
 }
+
+#page-content-wrapper {
+  padding-top: 0px;
+}
+
+@media(max-width:768px) {
+  #page-content-wrapper {
+    margin: auto;
+  }
+}
+
+
+
+
 

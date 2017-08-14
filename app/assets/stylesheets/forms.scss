@@ -1,9 +1,17 @@
+@import 'colors';
+@import 'mixins';
+
 .form_design {
   margin: auto;
 }
 
 .container.form-style {
-  margin-left: 25%; 
+  @extend .form_design; 
+  width: 70%;
+}
+
+#login-form {
+  @extend .form_design;
   width: 50%;
 }
 
@@ -13,4 +21,23 @@ div.col.s12.m12.login-btn {
 
 .form-inputs.input-field.col.s12.m12 {
   padding-right: 54px;
+}
+
+#sign-up-form {
+  padding: 30px;
+  margin-left: 10px;
+}
+
+#confirm-changes {
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.gradient {
+  @include form-gradient;
+}
+
+button#signup-btn.btn.waves-light.waves-effect.amber.accent-4 {
+  line-height: 1.5rem !important;
+  height: 2.5rem !important;
 }

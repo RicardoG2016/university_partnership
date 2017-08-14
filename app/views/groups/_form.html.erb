@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container col-md-6">
   <%= form_for(@group) do |f| %>
 
     <div class="row">
@@ -45,7 +45,15 @@
         <%= f.label :member_count %>
         <%= f.number_field :member_count %>
       </div>
-    </div>      
+    </div>
+    
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </div>
+    </div>
+      
       <p>
         <button class="btn waves-effect waves-light green accent-4" type="submit" name="action">
           <%= f.submit "Save" %>  

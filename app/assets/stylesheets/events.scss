@@ -30,7 +30,7 @@ p.event-text {
   text-overflow: ellipsis;
 }
 
-.event-header {
+.event-header, #center {
   text-align: center;
 }
 
@@ -40,7 +40,6 @@ p.event-text {
   margin-left: 0 !important;
 }
 
-.center {
+#center {
   margin: auto;
-  text-align: center;
 }

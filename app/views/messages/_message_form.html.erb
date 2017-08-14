@@ -5,14 +5,14 @@
 <br>
   <%= form_for message, remote: true,authenticity_token: true do |f|%>
       <div class="row">
-        <div class="input-field col s6">
-          <%= f.hidden_field :chat_id, value: chat.id %>
+        <div class="text-field col s6">          
           <%= f.text_area :content, data: {textarea: "message"}, class: "" %>
+          <%= f.hidden_field :chat_id, value: chat.id %>
         </div>
       </div>
       <p>
         <button class="btn waves-effect waves-light green accent-4" type="submit" name="action">
-          <%= f.submit "Save", class: "submit-on-enter" %>  
+          <%= f.submit "Save", class: "submit_message" %>
         </button>          
       </p>
 <br>

@@ -1,0 +1,120 @@
+<div id="simple-nav" class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper white">
+    <% if current_group %>
+      <ul id="nav-mobile" class="left">      
+        <li>
+          <!-- <a href="#menu-toggle" class="grid" id="menu-toggle">
+            <i class="material-icons md-36 nav-icons">menu</i>
+          </a> -->
+        </li>      
+        <li>
+          <a href="/" class=""><%= image_tag("logo.png", class: "simple-logo", size: "55x45", :alt => "logo")%></a>
+        </li>
+      </ul>
+      <ul id="nav-mobile" class="right">          
+          <li>
+            <a href="/groups/<%= current_group.id %>">
+              <i class="blue-text">
+                <span id="session"><%= image_tag current_group.image.url(:thumb), class: "avatar" %></span>    
+              </i>
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <i class="material-icons md-36 nav-icons">notifications</i>
+            </a>
+          </li>
+        </ul>      
+    <% else %>
+      <a href="/" class=""><%= image_tag("logo.png", class: "simple-logo", size: "55x45", :alt => "logo")%></a>    
+      <ul id="nav-mobile" class="right">
+        <li><a href="/groups/sign_in" class="simple-text">Sign In</a></li>
+        <li><a href="#" class="simple-text">|</a></li>
+        <li><a href="/groups/sign_up" class="simple-text">Sign Up</a></li>
+      </ul>        
+    <% end %>
+    </div>
+  </nav>
+</div>
+
+<!-- sub nav with search -->
+<% if current_group %>
+  <nav id="sub-nav" class="grey lighten-3">
+    <div class="col-md-12" style="max-height: 66px;">
+      <%= form_tag search_posts_path, method: :get, class: "search-bar text-field", role: "search" do %>
+        <p>
+          <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
+          <% submit_tag "", name: nil, class: "submit-on-enter" %>
+        </p>
+      <% end %>
+    </div>
+  </nav>
+<% end %>
+
+
+<!-- Sidebar -->
+  <% if current_group %>
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">            
+        <li>
+          <a href="/">
+            <i class="material-icons md-36 side-icons">home</i>
+            <span class="side-bar-text">Home</span>
+          </a>
+        </li> 
+        <li>                
+          <a href="/groups">
+            <i class="material-icons md-36 side-icons">group</i>
+            <span class="side-bar-text">Groups</span>
+          </a>
+        </li>
+        <li>                
+          <a href="/posts/new">
+            <i class="material-icons md-36 side-icons">add_circle_outline</i>
+            <span class="side-bar-text">Add Post</span>
+          </a>
+        </li>                 
+        <li>                
+          <a href="/posts/new">
+            <i class="material-icons md-36 side-icons">notifications</i>
+            <span class="side-bar-text">Notifications</span>
+          </a>
+        </li>                   
+        <li>                
+          <a href="/groups/<%= current_group.id%>/chats">
+            <i class="material-icons md-36 side-icons">mail</i>
+            <span class="side-bar-text">Messages</span>
+          </a>
+        </li>
+        <li>        
+          <a href="/events">
+              <i class="material-icons md-36 side-icons">event</i>
+              <span class="side-bar-text">Events</span>                
+          </a>
+        </li>
+        <li>                
+          <a href="/events/new">
+            <i class="material-icons md-36 side-icons">add_box</i>
+            <span class="side-bar-text">Add Event</span>
+          </a>
+        </li>
+        <hr>              
+        <li>                
+          <a href="/groups/edit">
+            <i class="material-icons md-36 side-icons">settings</i>
+            <span class="side-bar-text">Settings</span>
+          </a>
+        </li>
+        <hr>
+        <% if current_group %>
+          <li>
+            <%= link_to destroy_group_session_path, :method => :delete do %>
+              <i class="material-icons md-36 side-icons">exit_to_app</i>
+              <span class="side-bar-text">Logout</span>
+            <% end %>
+          </li>
+        <% end %>                
+      </ul>
+    </div>
+  <% end %>

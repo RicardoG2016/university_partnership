@@ -18,6 +18,7 @@
 a.navbar-brand > img {
   vertical-align: text-bottom;
   margin-left: 10px;
+  position: fixed;
 }
 
  a.nav-link {
@@ -50,10 +51,8 @@ li.landing-page {
 .search-bar {
   margin: auto;
   position: relative;
-  padding: 0 30px;
-  width: 50%;
-  margin-top: 15px;
-  margin-left: 130px;
+  text-align: center;
+  margin-left: -115px;
 }
 
 .search-bar input {
@@ -68,6 +67,10 @@ li.landing-page {
   background-color: white;
 }
 
+#search {
+  padding-top: 9px;
+}
+
 .nav-link > a:hover {
   background-color: none !important;
 }
@@ -76,3 +79,41 @@ i.blue-text > span#session {
   padding-top: 5px;
   font-size: 12px !important;
 }
+
+a > li.nav-item:hover {
+  background-color: none !important;
+}
+
+div.collapse.navbar-collapse {
+  margin-left: auto;
+}
+
+#app {
+  width: initial;
+}
+
+#home {
+  width: 100%;
+}
+
+.simple-logo {
+  margin-left: 10px;
+  padding: 2px;
+}
+
+.simple-text {
+  color: #555;
+}
+
+.avatar {
+  height: 50px;
+  width: 50px !important;
+  border-radius: 90%;
+  margin-bottom: 14px;
+}
+
+#sub-nav {
+  margin: 0 0 0 86px;
+}
+
+

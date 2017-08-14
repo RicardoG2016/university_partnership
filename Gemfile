@@ -35,6 +35,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # custom
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
 gem 'jquery-rails'
 gem 'pry-rails', :group => :development
 gem 'font-awesome-sass', '~> 4.7.0'
@@ -44,8 +49,8 @@ gem 'simple_form'
 gem 'materialize-sass'
 gem 'material_icons'
 gem 'pickadate-rails'
-# gem 'acts_as_votable', '~> 0.10.0'
 gem 'socialization', '~> 1.2'
+gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

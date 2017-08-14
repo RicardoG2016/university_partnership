@@ -68,6 +68,10 @@ ActiveRecord::Schema.define(version: 20170812181708) do
     t.integer "member_count"
     t.string "phone"
     t.integer "likees_count", default: 0
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["email"], name: "index_groups_on_email", unique: true
     t.index ["reset_password_token"], name: "index_groups_on_reset_password_token", unique: true
   end
