@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote] 
+  before_action :find_post, only: [:show, :edit, :update, :destroy, :like, :unlike] 
   before_action :authenticate_group!
 
 def search
@@ -61,9 +61,14 @@ def destroy
   redirect_to '/'
 end
 
-def upvote
-  @post.upvote_by current_group
-  redirect_to @post
+def like
+  current_group.like!(@post)
+  redirect_back(fallback_location: root_path)
+end
+
+def unlike
+  current_group.unlike!(@post)
+  redirect_back(fallback_location: root_path)
 end
 
 private

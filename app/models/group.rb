@@ -1,4 +1,8 @@
 class Group < ApplicationRecord
+  acts_as_liker
+  acts_as_follower
+  acts_as_followable
+  acts_as_mentionable
   searchkick
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable 
