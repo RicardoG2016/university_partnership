@@ -21,12 +21,13 @@
   <body>
     
       
-  <div id="wrapper">
-    <%= render 'components/navbar' %>
-      <% if current_group %>    
+  <div id="wrapper">    
+      <% if current_group %>
+        <%= render 'components/navbar' %>
         <div id="page-content-wrapper">
         <div class="container-content">
       <% else %>
+        <%= render 'components/nav' %>
         <div>
         <div>
       <% end %>                      

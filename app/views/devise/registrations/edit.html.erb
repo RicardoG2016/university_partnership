@@ -63,6 +63,16 @@
         </div>
 
         <div class="row">
+          <div class="file-field input-field col s6">            
+            <%=f.label :Upload_Image %><br><br>
+            <%= f.button "Upload Image", :class => "btn blue" %>
+            <%= f.text_field :image%>
+            <%= f.file_field :image %>
+          </div>
+        </div>
+        <br>
+        
+        <div class="row">
           <div class="password-field col s6">
           <%= f.label :current_password %><br />
           <%= f.password_field :current_password, autocomplete: "off", hint: "we need your current password to confirm your changes", placeholder: "Confirm password to save changes", require: true %>

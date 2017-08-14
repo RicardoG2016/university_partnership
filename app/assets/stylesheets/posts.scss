@@ -83,6 +83,18 @@ i.material-icons.edit-icon {
 #new-post {
   border-style: none;
   color: #0091ea;
-  
+}
+
+#img-post.row {
+  padding: 0 20px;
+  margin: 0;
+}
+
+#img-post > span {
+  max-width: 20%;
+}
+
+#text-post {
+  max-width: 80%;
 }
 

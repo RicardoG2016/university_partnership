@@ -50,6 +50,7 @@ gem 'materialize-sass'
 gem 'material_icons'
 gem 'pickadate-rails'
 gem 'acts_as_votable', '~> 0.10.0'
+gem "paperclip", "~> 5.0.0"
 
 
 group :development, :test do

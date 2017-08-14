@@ -25,4 +25,6 @@ class Group < ApplicationRecord
   # validates :password, presence: true, length: { minimum: 6 }  
   validates :president, presence: true
   validates :phone, presence: true, length: { minimum: 10 }
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "50x50>" }, default_url: "school.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end

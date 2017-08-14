@@ -4,6 +4,7 @@ body {
 }
 
 .header-image {
+    margin-top: -55px;
     display: block;
     width: 100%;
     text-align: center;
@@ -18,20 +19,17 @@ body {
     padding: 120px 0;
 }
 
-.headline h1 {
-    font-size: 75px;
+.headline h1, .headline h2 {
     color: white !important;
     font-weight: bold;
-/*  background: #fff;
-    background: rgba(255,255,255,0.9);*/
+}
+
+.headline h1 {
+    font-size: 75px;
 }
 
 .headline h2 {
     font-size: 55px;
-    color: white !important;
-    font-weight: bold;
-/*  background: #fff;
-    background: rgba(255,255,255,0.9);*/
 }
 
 .featurette-divider {

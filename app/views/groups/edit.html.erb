@@ -60,6 +60,13 @@
     </div>
 
     <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="password-field col s6">
       <%= f.label :current_password %><br />
       <%= f.password_field :current_password, autocomplete: "off", placeholder: "Confirm password to save changes", required: true %>

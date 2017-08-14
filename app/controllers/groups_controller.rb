@@ -63,7 +63,7 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:university, :password, :phone, :email, :president, :member_count)
+    params.require(:group).permit(:university, :password, :phone, :email, :president, :member_count, :image)
   end
 
 end
