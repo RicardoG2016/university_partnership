@@ -3,29 +3,30 @@
 ### Application will allow Rainforest Partnershp to collaborate with university clubs and collaborate in a central location.
 -  Application currently in development. Screenshots of current progress are shown below.
 
+
 #### The application allows groups to add events, posts, comments, upload images, like posts/comments and search for any of those through out the app.
 - #### Elasticsearch and searchkick gem provide search functionality throughout application.
-- #### Action cable prrovide real time chat between users.
+- #### Action cable prrovide real time chat between users!! 
 
 ![alt text](https://user-images.githubusercontent.com/20272116/29287696-faafa6da-80fb-11e7-8f04-e3df94724537.png)
 ![alt text](https://user-images.githubusercontent.com/20272116/29287905-7506fb72-80fc-11e7-9eaf-59484a81a825.png)
 ![alt text](https://user-images.githubusercontent.com/20272116/29286907-52413510-80f9-11e7-8430-f14e674e257c.png)
 ![alt text](https://user-images.githubusercontent.com/20272116/29288427-4fa9cc22-80fe-11e7-9805-4ad825aced8a.png)
 
-### Landing Page before authentication shown below.
-- #### Formspress.io api provides simple email functionality.
+#### Landing Page before authentication shown below.
+- ##### Formspress.io api provides simple email functionality.
 ![alt text](https://user-images.githubusercontent.com/20272116/29288243-aaf0f232-80fd-11e7-95cc-6beae7f4e193.png)
 
 
-### Simple layout will explain the purpose of the program.
-- #### Bootstrap and materliaze are used for styling.
+#### Simple layout will explain the purpose of the program.
+- ##### Bootstrap and materliaze are used for styling.
 ![alt text](https://user-images.githubusercontent.com/20272116/29286884-40fe2448-80f9-11e7-823d-383860e398f6.png)
 
 
-### Elegant set of forms through out app.
+#### Elegant set of forms through out app.
 ![alt text](https://user-images.githubusercontent.com/20272116/29286915-58ab6286-80f9-11e7-9df1-bcf6bc9b17aa.png)
 ![alt text](https://user-images.githubusercontent.com/20272116/29286914-58a79138-80f9-11e7-893a-23b9a930c4c5.png)
 
-### Pickadate.js and JQueryUI provide intuitive date and time pickers.
+#### Pickadate.js and JQueryUI provide intuitive date and time pickers.
 ![alt text](https://user-images.githubusercontent.com/20272116/29062942-5378a22a-7be9-11e7-87e1-1310851e1dcf.png)
 ![alt text](https://user-images.githubusercontent.com/20272116/29062943-538c1db4-7be9-11e7-9238-f3a9ad896f2a.png)
