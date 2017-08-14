@@ -21,22 +21,23 @@
   <body>
     
       
-  <div id="wrapper">    
-      <% if current_group %>
-        <%= render 'components/navbar' %>
-        <div id="page-content-wrapper">
+    
+<% if current_group %>
+  <%= render 'components/nav' %>
+    <div id="wrapper">  
+      <div id="page-content-wrapper">
         <div class="container-content">
-      <% else %>
-        <%= render 'components/nav' %>
+  <% else %>
+    <%= render 'components/nav' %>
+      <div>
         <div>
-        <div>
-      <% end %>                      
+  <% end %>                      
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p> 
           <%= yield %>
           <%= render 'components/chat_button' %>
         </div>
-        </div> 
+      </div> 
   </div>  
           
     <!-- jQuery first, then Tether, then Bootstrap JS. -->

@@ -51,10 +51,8 @@ li.landing-page {
 .search-bar {
   margin: auto;
   position: relative;
-  padding: 0 30px;
-  width: 850px;
-  margin-top: 15px;
-  margin-left: 130px;
+  text-align: center;
+  margin-left: -115px;
 }
 
 .search-bar input {
@@ -67,6 +65,10 @@ li.landing-page {
   border-style: none !important;
   box-shadow: 0px 0px 2px 2px #eff2f3;
   background-color: white;
+}
+
+#search {
+  padding-top: 9px;
 }
 
 .nav-link > a:hover {
@@ -108,6 +110,10 @@ div.collapse.navbar-collapse {
   width: 50px !important;
   border-radius: 90%;
   margin-bottom: 14px;
+}
+
+#sub-nav {
+  margin: 0 0 0 86px;
 }
 
 

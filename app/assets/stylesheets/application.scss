@@ -83,7 +83,8 @@ span > a:hover {
 .header {
   text-align: center !important;
   padding: 20px;
-  margin-top: 40px;
+  padding-top: 0px;
+  /*margin-top: 40px;*/
 }
 
 .new-header {
@@ -129,3 +130,18 @@ div.picker__holder {
         margin-left: 65px;
     }
 }
+
+#page-content-wrapper {
+  padding-top: 0px;
+}
+
+@media(max-width:768px) {
+  #page-content-wrapper {
+    margin: auto;
+  }
+}
+
+
+
+
+

@@ -36,3 +36,8 @@ div.col.s12.m12.login-btn {
 .gradient {
   @include form-gradient;
 }
+
+button#signup-btn.btn.waves-light.waves-effect.amber.accent-4 {
+  line-height: 1.5rem !important;
+  height: 2.5rem !important;
+}

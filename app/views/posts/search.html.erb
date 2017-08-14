@@ -46,4 +46,10 @@
       </div>
     <% end %>
   <% end %>
+
+  <% if @event.length == 0 && @group.length == 0 && @post.length == 0 %>
+    <div class=" search-results col-md-12">
+      <h2 class="text-muted result-title header">No records exist at this time</h2>
+    </div>
+  <% end %>
 </div>

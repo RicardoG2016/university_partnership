@@ -16,10 +16,11 @@ body {
 }
 
 #wrapper.toggled {
-    padding-left: 250px;
+    /*padding-left: 250px;*/
 }
 
 #sidebar-wrapper {
+    margin-top: -64px;
     z-index: 1000;
     position: fixed;
     left: 220px;
@@ -57,7 +58,7 @@ body {
     position: absolute;
     top: 0;
     width: 220px;
-    margin: 92px 0 0 0;
+    margin: 10px 0 0 0;
     padding: 0;
     list-style: none;
 }
@@ -70,7 +71,6 @@ body {
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    /*color: #999999;*/
     color: #fff;
 }
 

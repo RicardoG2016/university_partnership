@@ -49,8 +49,12 @@
                       </div> 
 
                       <div class="file-field form-input input-field col s12 m12 l6">
-                        <%=e.button :Image, :class => "btn" %>                        
-                        <%= e.file_field :image %>
+                        <button id="signup-btn" class="btn waves-light waves-effect amber accent-4">
+                          Image
+                          <%= e.file_field :image %>
+                          <i class="material-icons right btn-icon">add_a_photo</i>
+                        </button> 
+
                       </div>
                     
                       <div class="form-input s12 m12 l6">

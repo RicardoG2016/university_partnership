@@ -59,6 +59,16 @@ $(document).ready(function() {
     $(this).parent().closest('div').hide();
   });
 
+  // if ($('#wrapper').hasClass('toggled')){
+  //   $('#menu-toggle').on('click', function(e){
+  //     $('#sidebar-wrapper').css('width', '99px');
+  // })    
+  // } else {
+  //   $('#menu-toggle').on('click', function(e){
+  //     $('#sidebar-wrapper').css('width', '220px');
+  //   })
+  // }
+
 });
 
 
