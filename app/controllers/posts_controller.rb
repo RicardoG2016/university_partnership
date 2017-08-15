@@ -14,7 +14,8 @@ def search
   end
 end
 
-def index
+def index  
+  @events = Event.all.order("created_at DESC")
   @post = Post.all.order("created_at DESC")
 end
 
