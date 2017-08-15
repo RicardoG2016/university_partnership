@@ -37,7 +37,7 @@ end
 def create
   # without devise
   # @post = Post.new(post_params)
-  @post = current_group.posts.build(post_params)
+  @post = current_group.posts.build(post_params).capitalize
 
   if @post.save
     redirect_to '/'

@@ -12,7 +12,7 @@
                       <div class="form-inputs input-field col s12 m12">
                         <i class="mdi-communication-email prefix"></i>
                         <%= f.label :email, :id => "icon_email" %>
-                        <%= f.email_field :email, :id => "icon_email", autofocus: true %>
+                        <%= f.email_field :email, :id => "icon_email", autofocus: true, :class => "validate" %>
                       </div>                          
                     </div>
                   </div>
@@ -22,7 +22,7 @@
                       <div class="form-inputs input-field col s12 m12">
                         <i class="mdi-action-account-circle prefix"></i>
                           <%= f.label :password, :id => "icon_password" %>
-                          <%= f.password_field :password, :id => "icon_password", autocomplete: "off", autofocus: true %>
+                          <%= f.password_field :password, :id => "icon_password", autocomplete: "off", autofocus: true, :class => "validate" %>
                       </div>
                     </div>
                   </div>

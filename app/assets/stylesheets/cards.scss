@@ -1,4 +1,4 @@
-.card-title, .card-text {
+/*.card-title, .card-text {
   margin: auto;
   text-align: left;
   width: 100%;
@@ -8,10 +8,25 @@
   margin-top: 0px;
   margin-bottom: 15px;
   font-size: 17px;
-}
+}*/
 
 .card {
-  height: 120px;
-  margin: 10px;
-  margin-bottom: 30px;
+  height: 350px;
+  margin: 0px !important;
+  /*margin-bottom: 30px;*/
+  /*background-position: center;*/
+  /*background-size: cover;*/
+  /*background-repeat: no-repeat;*/
+}
+
+.card .card-content {
+  border-top: 1px solid #eee;
+}
+
+.card.groups {
+  margin: 0px 0px 30px !important;
+}
+
+.show {
+  margin: auto !important;
 }
