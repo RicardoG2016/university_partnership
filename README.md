@@ -9,6 +9,7 @@
 - #### Action cable prrovide real time chat between users!! 
 
 ![alt text](https://user-images.githubusercontent.com/20272116/29287696-faafa6da-80fb-11e7-8f04-e3df94724537.png)
+![alt text](https://user-images.githubusercontent.com/20272116/29347877-421dfd86-8215-11e7-9e33-1d5258d4e938.png)
 ![alt text](https://user-images.githubusercontent.com/20272116/29287905-7506fb72-80fc-11e7-9eaf-59484a81a825.png)
 ![alt text](https://user-images.githubusercontent.com/20272116/29286907-52413510-80f9-11e7-8430-f14e674e257c.png)
 ![alt text](https://user-images.githubusercontent.com/20272116/29288427-4fa9cc22-80fe-11e7-9805-4ad825aced8a.png)
