@@ -63,17 +63,19 @@
   </div>
 
   <div id="side-feed" class="col-md-5 text-muted">
-      <h3 id="side-feed-header" class="header">Upcoming Events</h4>
+      <h3 id="side-feed-header" class="header">Events</h4>
       <ul class="collection">
         <% @events.each do |e| %>
-          <li class="collection-item">
-          <a href="/events/e.id">
-            <h3><%= e.name %></h3>
-            <span>By: <%= e.group.university %></span><br>
-            <span>Date: <%= e.date.strftime("%m/%d/%Y") %></span>
-            <span>Time: <%= e.time.strftime("%l:%M%P") %></span>
-          </a>
-          </li>
+          <!-- <% if (Time.now  - e.time) > 0 %> -->
+            <li class="collection-item" id="effects">
+            <%= link_to event_path(e) do %>
+              <h3 class="highlight"><%= e.name %></h3>
+              <span>By: <%= e.group.university %></span><br>
+              <span>Date: <%= e.date.strftime("%m/%d/%Y") %></span>
+              <span>Time: <%= e.time.strftime("%l:%M%P") %></span>
+            <% end %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
   </div>

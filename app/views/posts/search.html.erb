@@ -34,7 +34,10 @@
 
 <!-- group results -->
   <% if @group.length > 0 %>
+
     <div class=" search-results col-md-12">
+      <br>
+      <br>
       <h2 class="text-muted result-title header">Group Results</h2>
     </div>
     <% @group.each do |g| %>
@@ -46,10 +49,13 @@
       </div>
     <% end %>
   <% end %>
-
+<br>
+<br>
 <!-- event results -->
   <% if @event.length > 0 %>
     <div class=" search-results col-md-12">
+      <br>
+      <br>
       <h2 class="text-muted result-title header">Event Results</h2>
     </div>
     <% @event.each do |e| %>

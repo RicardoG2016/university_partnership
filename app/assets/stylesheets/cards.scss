@@ -10,13 +10,12 @@
   font-size: 17px;
 }*/
 
-.card {
-  height: 350px;
-  margin: 0px !important;
-  /*margin-bottom: 30px;*/
-  /*background-position: center;*/
-  /*background-size: cover;*/
-  /*background-repeat: no-repeat;*/
+div.card {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 288px;
+  min-width: 288px;
+  min-height: 268px;
 }
 
 .card .card-content {
@@ -24,9 +23,31 @@
 }
 
 .card.groups {
-  margin: 0px 0px 30px !important;
+  margin: auto;
+  margin-bottom: 30px !important;
 }
 
 .show {
   margin: auto !important;
+}
+
+div.card-image.waves-effect.waves-block.waves-light {
+  min-height: 254px;
+  min-width: 100%;
+
+}
+
+#group-text {
+  font-size: 16px;
+}
+
+
+@media screen and (min-width: 846px) {
+  .card .groups {
+    height: 288px ;
+    width: 268px ;
+    margin: auto ;
+  }
+
+
 }

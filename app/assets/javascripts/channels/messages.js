@@ -4,11 +4,11 @@ function createMessageChannel() {
         },
         {
         received: function(data) {
-          $("#messages").removeClass('hidden')
+          $("#messages").removeClass('hidden')          
           return $('#messages').append(this.renderMessage(data));
         },
         renderMessage: function(data) {
-    return "<p> <b>" + data.group + ": </b>" + data.message + "</p>";
+    return "<div id='other'><p> <b>" + data.group + ": </b><p>" + data.message + "</p></div>";
   },
       });
 return App.messages;

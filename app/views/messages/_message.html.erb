@@ -1,12 +1,12 @@
 <% if message.group == current_group %>
   <p id="other">
     <strong class="chat-text"><%= message.group.university %> : <%= message.content %><br></strong>
-    <span>Send at: <%= message.created_at.strftime("%l:%M%P") %><span> 
+    <span>Sent at: <%= message.created_at.strftime("%l:%M%P") %><span> 
   </p>
 <% else %>
   <p id="mine"> 
     <strong class="chat-text"><%= message.group.university %> : <%= message.content %><br></strong>
-    <span>Send at: <%= message.created_at.strftime("%l:%M%P") %><span>
+    <span>Sent at: <%= message.created_at.strftime("%l:%M%P") %><span>
   </p>
 <% end %>
   

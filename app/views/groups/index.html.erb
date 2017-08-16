@@ -4,14 +4,14 @@
   </div>
   <div class="text-muted col-md-12 row"> 
     <% @groups.each do |group|%>      
-      <div class="col-md-4 col-sm-12" >        
+      <div class="col-md-6 col-lg-4" >        
           <div class="card groups" id="effects">        
             <div class="card">              
-              <div style="width: 100%, height: 70%;" class="card-image waves-effect waves-block waves-light">              
-                <a href="/groups/<%=group.id%>"><img src="<%= group.image.url()%>"></a>
+              <div class="card-image waves-effect waves-block waves-light">              
+                <a href="/groups/<%=group.id%>"><img src="<%= group.image.url()%>" id="group-image"></a>
               </div>
                 <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4"><%= link_to group.university, group %><i class="material-icons right">more_vert</i></span>
+                  <span class="card-title activator grey-text text-darken-4"><%= link_to group.university, group, :id => "group-text" %><i class="material-icons right">more_vert</i></span>
                 </div>
                 <div class="card-reveal">
                   <strong class="card-title grey-text text-darken-4">

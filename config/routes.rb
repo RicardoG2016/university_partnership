@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :chats, only: [:index, :show, :create]
   end
 
+  # post '/posts', to: "posts#create"
 
   resources :posts do
     collection do 

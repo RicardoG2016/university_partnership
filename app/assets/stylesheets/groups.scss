@@ -21,7 +21,19 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  min-height: 200px;
+  /*min-height: 200px;*/
   width: 100%;
+}
 
+#group-image {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+div.card.groups {  
+  height: 350px;
+}
+
+.card.card-content {
+  height: 20%;
 }

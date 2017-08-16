@@ -25,6 +25,7 @@
 //= require_tree ./channels
 //= require_*
 
+
 $(document).ready(function() {
 
   $('.submit_on_enter').keydown(function(event) {
