@@ -44,7 +44,7 @@
         <%else%>
           <%= link_to like_post_comment_path(@post, comment), :method => :put, class: "waves-effect social-btn waves-light blue btn" do %>
             <i class="material-icons left">favorite</i><%=comment.likers(Group).count%>
-        <% end %>
+          <% end %>
         <%end%>   
         <hr>
       <% end %> 
