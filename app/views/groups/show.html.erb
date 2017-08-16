@@ -6,7 +6,7 @@
       <div class="col-md-4">
         <div style="width: 100%, height: 70%;" class="waves-effect waves-block waves-light">                        
           <ul class="collection with-header">
-            <li class=>
+            <li class="">
               <div id="group-info" style="background-image: url('<%= @group.image.url() %>');">
               </div>
             </li>
@@ -16,19 +16,14 @@
             </li>
             <li class="collection-item">Members: <%= @group.member_count %></li>
 
-            <!-- Chat button is below and setup but i want to style chat section before use. -->
-<!--             <% if current_group != @group %>
-              <li class="collection-item amber accent-4"><a href="/groups/<%= current_group.id %>/chats?other_group=<%= @group.id %>">Message<i style="margin-left: 10px;" class="material-icons">chat</i></a></li>
-            <% end %> -->
-            <!--  -->
           </ul>
           <br>
-          <% if current_group == @group %>              
+                       
             <div class="">
               <%= link_to 'Edit', edit_group_path(@group), :class => "new-event-btn btn waves-effect waves-light green accent-4" %>
               <%= link_to 'Back', groups_path, :class => "new-event-btn btn waves-effect waves-light green accent-4" %>
             </div>
-          <% end %>
+          
         </div>
       </div>  
         <br>

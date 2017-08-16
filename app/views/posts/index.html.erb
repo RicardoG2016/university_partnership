@@ -29,7 +29,7 @@
                 <span style="padding-right: 10px;"><%= image_tag p.group.image.url(:thumb), class: "avatar" %></span>  
               </div>              
               <div id="text-post" class="">
-                <h3 class="card-title"><%= link_to p.body.capitalize, p, class: "highlight" %></h3>
+                <h3 class="card-title"><%= link_to p.body.capitalize.truncate(51), p, class: "highlight" %></h3>
                 <span class="card-text post-text"><%= link_to p.group.university, group_path(p.group), class: "highlight" %></span><br>    
               </div>              
             </div>             
@@ -69,10 +69,10 @@
           <!-- <% if (Time.now  - e.time) > 0 %> -->
             <li class="collection-item" id="effects">
             <%= link_to event_path(e) do %>
-              <h3 class="highlight"><%= e.name %></h3>
-              <span>By: <%= e.group.university %></span><br>
-              <span>Date: <%= e.date.strftime("%m/%d/%Y") %></span>
-              <span>Time: <%= e.time.strftime("%l:%M%P") %></span>
+              <h3 id="side-feed-title" class="highlight side-content"><%= e.name %></h3>
+              <span class="side-content">By: <%= e.group.university %></span><br>
+              <span class="side-content">Date: <%= e.date.strftime("%m/%d/%Y") %></span>
+              <span class="side-content">at <%= e.time.strftime("%l:%M%P") %></span>
             <% end %>
             </li>
           <% end %>

@@ -14,7 +14,9 @@
       <% end %>
     </div>
       <h3 class="cars-text post-text"><%= @post.body.capitalize %></h3>
-      <span class="card-text post-text"><%= @post.group.university %></span>
+      <%= link_to @post.group do %>
+        <span class="card-text post-text"><%= @post.group.university %></span>
+      <% end %>
       <hr>
             <div id="social">
               <%if @post.liked_by?(current_group)%>

@@ -39,21 +39,22 @@
 </div>
 
 <!-- sub nav with search -->
-<div class="navbar-fixed">
-  <% if current_group %>
-    <nav id="sub-nav" class="grey lighten-3">
-      <div class="col-md-12" style="max-height: 66px;">
-        <%= form_tag search_posts_path, method: :get, class: "search-bar text-field", role: "search" do %>
-          <p>
-            <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
-            <% submit_tag "", name: nil, class: "submit-on-enter" %>
-          </p>
-        <% end %>
-      </div>
-    </nav>
-  <% end %>  
-</div>
-
+<% if current_group %>
+  <div class="navbar-fixed">
+    <% if current_group %>
+      <nav id="sub-nav" class="grey lighten-3">
+        <div class="col-md-12" style="max-height: 66px;">
+          <%= form_tag search_posts_path, method: :get, class: "search-bar text-field", role: "search" do %>
+            <p>
+              <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
+              <% submit_tag "", name: nil, class: "submit-on-enter" %>
+            </p>
+          <% end %>
+        </div>
+      </nav>
+    <% end %>  
+  </div>
+<% end %>
 
 <!-- Sidebar -->
   <% if current_group %>
