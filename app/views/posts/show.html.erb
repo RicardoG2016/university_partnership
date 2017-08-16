@@ -36,6 +36,16 @@
       <% @comments.each do |comment| %>
         <p class="card-text post-text"><%= comment.content.capitalize %> </p>
         <span class="card-text post-text comment-header"><%= comment.group.university %> - <%= comment.created_at.strftime("%m/%d/%Y") %> </span>
+        <br>
+        <%if comment.liked_by?(current_group)%>
+          <%= link_to unlike_post_comment_path(comment), :method => :put, class: "waves-effect social-btn waves-light blue btn" do %>
+            <i class="material-icons left">favorite</i><%=comment.likers(Group).count%>
+          <% end %>
+        <%else%>
+          <%= link_to like_post_comment_path(comment), :method => :put, class: "waves-effect social-btn waves-light blue btn" do %>
+            <i class="material-icons left">favorite</i><%=comment.likers(Group).count%>
+          <% end %>
+        <%end%>   
         <hr>
       <% end %> 
       <br> 
