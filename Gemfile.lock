@@ -236,6 +236,7 @@ GEM
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
     slop (3.6.0)
+    smarter_csv (1.1.4)
     socialization (1.2.0)
       activerecord
     spring (2.0.2)
@@ -302,6 +303,7 @@ DEPENDENCIES
   searchkick
   selenium-webdriver
   simple_form
+  smarter_csv
   socialization (~> 1.2)
   spring
   spring-watcher-listen (~> 2.0.0)

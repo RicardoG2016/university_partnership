@@ -60,6 +60,35 @@ $(document).ready(function() {
     $(this).parent().closest('div').hide();
   });
 
+
+// Materialize drop down menu settings for university pick list on new group
+  $('select').material_select();
+
+  $('input.select-dropdown').on('click', function(){
+    var menu = $(this).data('clicked', true);
+    var label = $(this.parentElement.parentElement.firstElementChild)
+
+// Materialize animations
+    $(label).addClass('active')
+// Show menu 
+    $('.dropdown-content').css({ 'opacity': '1', 'display': 'block', 'color': '#555'})
+    
+    var placeholder = menu.siblings('ul').children('li')
+    $(placeholder).click(function(){
+      $('.dropdown-content').css({'display': 'none'});
+    })
+    
+// Hides the menu when user clicks away
+    $('body').click(function(){
+      $('.dropdown-content').css({'display': 'none'});      
+      if ( ($(placeholder[0]).hasClass('selected')) ) {
+        $(label).removeClass('active');
+      } else {}
+    });
+  })
+
+
+
   // if ($('#wrapper').hasClass('toggled')){
   //   $('#menu-toggle').on('click', function(e){
   //     $('#sidebar-wrapper').css('width', '99px');
