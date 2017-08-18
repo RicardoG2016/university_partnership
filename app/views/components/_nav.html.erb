@@ -17,9 +17,9 @@
             <a href="/groups/<%= current_group.id %>">
               <i class="blue-text">
                   <% if school_url(current_group.university).include?('.edu') && current_group.image.url == 'school.png' %>
-                    <span id="session"><img class="avatar" src="https://logo.clearbit.com/<%= school_url(current_group.university) %>?size='60x60'"></span>
+                    <span id="session"><img style="padding: 10px; box-shadow: none;" class="avatar" src="https://logo.clearbit.com/<%= school_url(current_group.university) %>?size='60x60'"></span>
                   <% else %>
-                    <span id="session"><img class="avatar" src="<%= current_group.image.url()%>" id="group-image"></span>
+                    <span id="session"><img style="padding: 10px; box-shadow: none;" class="avatar" src="<%= current_group.image.url()%>" id="group-image"></span>
                   <% end %>
               </i>
             </a>
