@@ -46,9 +46,9 @@
             <div id="img-post" class="row">
                 <span style="padding-right: 10px; margin: auto; margin-left: 40px;display: -webkit-inline-box;">
                   <% if school_url(g.university).include?('.edu') && g.image.url == 'school.png' %>
-                    <img style='height: 70px; width:70px'; src="https://logo.clearbit.com/<%= school_url(g.university) %>?size='70x70'">
+                    <img class="avatar" style='height: 70px; width:70px'; src="https://logo.clearbit.com/<%= school_url(g.university) %>?size='70x70'">
                   <% else %>
-                    <img src="<%= g.image.url()%>" style='height: 70px; width:70px'; id="group-image">
+                    <img class="avatar" src="<%= g.image.url()%>" style='height: 70px; width:70px'; id="group-image">
                   <% end %>
                   <h3 class="card-title" style="margin-right: 'auto'; margin-left: 25px; padding-top: 26px;"><%= link_to g.university, group_path(g), class: "highlight" %></h3>
                 </span>
