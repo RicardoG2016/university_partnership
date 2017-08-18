@@ -29,8 +29,8 @@
                       </div>
 
                       <div class="form-inputs input-field col s12 l6 m12">
-                          <%= e.label :university %>                          
-                          <%= e.select :university, group_options[1], :placeholder => "Select University", :id => "school", autofocus: "true" %>
+                          <%= e.label :university %>             
+                          <%= e.select :university, school_list, :placeholder => "Select University", :id => "school", autofocus: "true" %>
                       </div>                          
 
                       <div class="form-inputs input-field col s12 l6 m12">
@@ -53,12 +53,7 @@
                           Image
                           <%= e.file_field :image %>
                           <i class="material-icons right btn-icon">add_a_photo</i>
-                        </button> 
-                        
-                        <% if e %>
-                          <!-- <img src="https://logo.clearbit.com/group_options%>"> -->
-                        <% end %>
-
+                        </button>
                       </div>
                     
                       <div class="form-input s12 m12 l6">

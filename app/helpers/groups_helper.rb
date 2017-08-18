@@ -1,33 +1,32 @@
 module GroupsHelper
 
-  def group_options
-    data_file = "lib/list.csv"
+  def csv_parser
+    file = "lib/list.csv"
     
     data = []
-    CSV.foreach(data_file, :headers => true) do |row|
+    CSV.foreach(file, :headers => true) do |row|
       data << row.to_h
     end
     
-    schools = []
-    info =[]
+    return data
     
-    data.each do |s|
-      # urls << s['urls']
-      # info << urls
+  end
 
-      schools << s['name']
-      info << schools
-    # binding.pry
+  def school_list
+    schools = []
+    csv_parser.map do |line| 
+      schools << line['name']       
     end
-
-
-    return info
-
+    return schools
   end
 
-  def urls
-    # return group_options[0]
+  def school_url(school)
+    csv_parser.map do |row| 
+      if row['name'] == school
+        url = row['url']
+        return url[11..-1]
+      end
+    end
   end
-
 
 end

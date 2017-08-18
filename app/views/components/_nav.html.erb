@@ -12,11 +12,15 @@
           <a href="/" class=""><%= image_tag("logo.png", class: "simple-logo", size: "55x45", :alt => "logo")%></a>
         </li>
       </ul>
-      <ul id="nav-mobile" class="right">          
+      <ul id="nav-mobile" class="right">
           <li>
             <a href="/groups/<%= current_group.id %>">
               <i class="blue-text">
-                <span id="session"><%= image_tag current_group.image.url(:thumb), class: "avatar" %></span>    
+                  <% if school_url(current_group.university).include?('.edu') && current_group.image.url == 'school.png' %>
+                    <span id="session"><img class="avatar" src="https://logo.clearbit.com/<%= school_url(current_group.university) %>?size='60x60'"></span>
+                  <% else %>
+                    <span id="session"><img class="avatar" src="<%= current_group.image.url()%>" id="group-image"></span>
+                  <% end %>
               </i>
             </a>
           </li>
