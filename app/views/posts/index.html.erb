@@ -1,5 +1,6 @@
 <div class="home-feed row">
   <div class="feed text-muted col-md-7">
+    
     <% if @post.length > 0 %>
     <h3 id="feed-header" class="header">Current Feed</h4> 
       <div id="effects" class="posts col-md-12"> 
@@ -26,7 +27,13 @@
             </div>
             <div id="img-post" class="row">
               <div id="img-in-post" class="">
-                <span style="padding-right: 10px;"><%= image_tag p.group.image.url(:thumb), class: "avatar" %></span>  
+                <span style="padding-right: 10px;">
+                  <% if school_url(p.group.university).include?('.edu') && p.group.image.url == 'school.png' %>
+                    <img class="avatar" src="https://logo.clearbit.com/<%= school_url(p.group.university) %>?size='50x50'">
+                  <% else %>
+                    <img class="avatar" src="<%= p.group.image.url()%>" id="group-image">
+                  <% end %>
+                </span>
               </div>              
               <div id="text-post" class="">
                 <h3 class="card-title"><%= link_to p.body.capitalize.truncate(51), p, class: "highlight" %></h3>

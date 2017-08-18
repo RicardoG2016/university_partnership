@@ -29,8 +29,8 @@
                       </div>
 
                       <div class="form-inputs input-field col s12 l6 m12">
-                          <%= e.label :university %>
-                          <%= e.text_field :university, :class => "validate" %>
+                          <%= e.label :university %>             
+                          <%= e.select :university, school_list, :placeholder => "Select University", :id => "school", autofocus: "true" %>
                       </div>                          
 
                       <div class="form-inputs input-field col s12 l6 m12">
@@ -53,8 +53,7 @@
                           Image
                           <%= e.file_field :image %>
                           <i class="material-icons right btn-icon">add_a_photo</i>
-                        </button> 
-
+                        </button>
                       </div>
                     
                       <div class="form-input s12 m12 l6">

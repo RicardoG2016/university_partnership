@@ -33,11 +33,11 @@
           <%= f.password_field :password_confirmation, autocomplete: "off", required: false %>
         </div>
       </div>
-
+      
       <div class="row">
-        <div class="text-field col s6">
-          <%= f.label :university %><br>
-          <%= f.text_field :university %>
+        <div class="form-inputs input-field col s12 l6 m12">
+            <%= f.label :university, :class => "active" %>    
+            <%= f.select :university, school_list, :placeholder => "Select University", :id => "school", autofocus: "true" %>
         </div>
       </div>
 
@@ -66,8 +66,12 @@
           <div class="file-field input-field col s6">            
             <%=f.label :Upload_Image %><br><br>
             <%= f.button "Upload Image", :class => "btn blue" %>
-            <%= f.text_field :image%>
             <%= f.file_field :image %>
+            <% if school_url(current_group.university).include?('.edu') && current_group.image.url == 'school.png' %>
+              <img id="edit-img" src="https://logo.clearbit.com/<%= school_url(current_group.university) %>?size='128x128'">
+            <% else %>
+              <img id="edit-img" src="<%= current_group.image.url()%>?size='128x128'" id="group-image">
+            <% end %>
           </div>
         </div>
         <br>

@@ -7,8 +7,13 @@
         <div style="width: 100%, height: 70%;" class="waves-effect waves-block waves-light">                        
           <ul class="collection with-header">
             <li class="">
-              <div id="group-info" style="background-image: url('<%= @group.image.url() %>');">
-              </div>
+              <% if school_url(@group.university).include?('.edu') && @group.image.url == 'school.png' %>
+                <img style="width: 200px; height: 200px; margin-left: 71px;" src="https://logo.clearbit.com/<%= school_url(@group.university) %>?size='250x250'">
+              <% else %>
+                <img src="<%= @group.image.url()%>" id="group-image">
+              <% end %>
+              <!-- <div id="group-info" style="background-image: url('<%= @group.image.url() %>');">
+              </div> -->
             </li>
             <li class="collection-item">President: <%= @group.president %></li>
             <li class="collection-item">Phone: <a href="tel:<%= @group.phone %>"></a><%= @group.phone %></li>

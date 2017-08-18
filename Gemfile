@@ -51,6 +51,8 @@ gem 'material_icons'
 gem 'pickadate-rails'
 gem 'socialization', '~> 1.2'
 gem "paperclip", "~> 5.0.0"
+gem 'smarter_csv'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

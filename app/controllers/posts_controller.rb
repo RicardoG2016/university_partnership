@@ -1,3 +1,5 @@
+require 'smarter_csv'
+
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy, :like, :unlike] 
   before_action :authenticate_group!
@@ -14,7 +16,7 @@ def search
   end
 end
 
-def index  
+def index 
   @events = Event.all.order("created_at DESC")
   @post = Post.all.order("created_at DESC")
 end

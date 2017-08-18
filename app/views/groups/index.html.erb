@@ -2,22 +2,30 @@
   <div class="header">
     <h1 class="event-header text-muted">Current University Partners</h1>  
   </div>
+
   <div class="text-muted col-md-12 row"> 
-    <% @groups.each do |group|%>      
+    <% @groups.each do |group|%>    
       <div class="col-md-6 col-lg-4" >        
           <div class="card groups" id="effects">        
-            <div class="card">              
-              <div class="card-image waves-effect waves-block waves-light">              
-                <a href="/groups/<%=group.id%>"><img src="<%= group.image.url()%>" id="group-image"></a>
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <a href="/groups/<%=group.id%>">
+                  <% if school_url(group.university).include?('.edu') && group.image.url == 'school.png' %>
+                    <img src="https://logo.clearbit.com/<%= school_url(group.university) %>?size='250x250'">
+                  <% else %>
+                    <img src="<%= group.image.url()%>" id="group-image">
+                  <% end %>
+                </a>
+
               </div>
                 <div class="card-content">
                   <span class="card-title activator grey-text text-darken-4"><%= link_to group.university, group, :id => "group-text" %><i class="material-icons right">more_vert</i></span>
                 </div>
                 <div class="card-reveal">
-                  <strong class="card-title grey-text text-darken-4">
+                <strong class="card-title grey-text text-darken-4">
+                    <i class="material-icons right">close</i><br>
                     <%= link_to group.university, group %>
-                    <i class="material-icons right">close</i>
-                  </strong>
+                  </strong>                  
                   <p>President: <%= group.president %></p>
                   <p>Phone: <%= group.phone %></p>
                   <p>Email: <%= group.email %></p>
