@@ -65,7 +65,7 @@
         <div class="row">
           <div class="file-field input-field col s6">            
             <%=f.label :Upload_Image %><br><br>
-            <%= f.button "Upload Image", :class => "btn blue" %>
+            <%= f.button "file", :class => "btn blue" %>
             <%= f.file_field :image %>
             <% if school_url(current_group.university).include?('.edu') && current_group.image.url == 'school.png' %>
               <img id="edit-img" src="https://logo.clearbit.com/<%= school_url(current_group.university) %>?size='128x128'">

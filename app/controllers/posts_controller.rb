@@ -9,16 +9,17 @@ def search
     @event = Event.search(params[:search])
     @post = Post.search(params[:search])
     @group = Group.search(params[:search])
-  else
-    @event = Event.all
-    @post = Post.all
-    @group = Group.all
+  # else
+  #   @event = Event.all
+  #   @post = Post.all
+  #   @group = Group.all
   end
 end
 
 def index 
   @events = Event.all.order("created_at DESC")
   @post = Post.all.order("created_at DESC")
+  @new_post = current_group.posts.build
 end
 
 def show
@@ -29,7 +30,7 @@ end
 
 def new
   # without devise
-  # @post = Post.new  
+  # @post = Post.new
   @post = current_group.posts.build
 end
 

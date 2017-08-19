@@ -49,11 +49,20 @@
                       </div> 
 
                       <div class="file-field form-input input-field col s12 m12 l6">
-                        <button id="signup-btn" class="btn waves-light waves-effect amber accent-4">
+                        <% if @group.image.file? %>
+                          <button id="signup-btn" class="btn waves-light waves-effect green accent-4">
+                          Uploaded!
+                          <%= e.file_field :image %>
+                          <i class="material-icons right btn-icon">check</i>
+                        </button>
+                        <% else %>
+                          <button id="signup-btn" class="btn waves-light waves-effect amber accent-4">
                           Image
                           <%= e.file_field :image %>
                           <i class="material-icons right btn-icon">add_a_photo</i>
                         </button>
+                        <% end %>
+
                       </div>
                     
                       <div class="form-input s12 m12 l6">

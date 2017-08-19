@@ -3,11 +3,18 @@
     
     <% if @post.length > 0 %>
     <h3 id="feed-header" class="header">Current Feed</h4> 
+    <!--  new post from home page will be setup below -->
       <div id="effects" class="posts col-md-12"> 
         <div class="edit-icons">
-            <form>
-              <input type="text" placeholder="Create new post..." class="submit-on-click" >
-            </form>
+          <%= form_for(@new_post) do |p| %>
+              <div class="row">
+                <div class="form-inputs input-field col s6">          
+                  <label data-error="wrong" data-success="right">Create a new post...</label>
+                  <%= p.text_field :body, :type => "text", :class => "validate" %>
+                </div>
+              </div>
+              <% p.submit "", name: nil, class: "new_post submit-on-enter" %>
+          <% end %>
         </div>
       </div>
       <br>

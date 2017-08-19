@@ -87,6 +87,21 @@ $(document).ready(function() {
     });
   })
 
+// New post form on posts/index
+  // $('form#new_post').submit(function(event) {
+    // enter has keyCode = 13, change it if you want to use another button
+    // event.preventDefault()
+    // var info = $('input#post_body.validate.valid').val()
+    // $.ajax({
+    //   type: "POST",
+    //   url: '/posts',
+    //   data: info,
+    //   success: success,
+    //   error: debugger,
+      // dataType: dataType
+    // });
+    
+  // });
 
 
   // if ($('#wrapper').hasClass('toggled')){
