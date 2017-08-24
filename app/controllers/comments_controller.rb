@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_group!
+  before_action :find_comment, only: [:like, :unlike]
 
   def create
     @post = Post.find(params[:post_id])
@@ -12,7 +13,21 @@ class CommentsController < ApplicationController
   else
     render 'new'
   end
+end
 
+  def like
+    current_group.like!(@comment)
+    redirect_back(fallback_location: root_path)
   end
 
+  def unlike
+    current_group.unlike!(@comment)
+    redirect_back(fallback_location: root_path)
+  end
+  
+  private
+  
+  def find_comment
+    @comment = Comment.find(params[:id])
+  end
 end
