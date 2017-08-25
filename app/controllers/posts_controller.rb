@@ -42,9 +42,15 @@ def create
   # without devise
   # @post = Post.new(post_params)
   @post = current_group.posts.build(post_params)
-
   if @post.save
-    redirect_to '/'
+    if request.xhr?
+      response = @post.attributes
+      response["university"] = @post.group.university
+      response["img_url"] = image_url(@post.group.university)
+      render :json => response
+    else
+      redirect_to '/'
+    end
   else
     render 'new'
   end
@@ -82,6 +88,17 @@ end
 
 def post_params
   params.require(:post).permit(:body)
+end
+
+#Finds School Image URL
+def image_url(university)
+  csv_text = File.read("lib/list.csv")
+  csv = CSV.parse(csv_text, :headers => true)
+  csv.each do |row|
+    if row["name"] == university
+      return row["url"]
+    end
+  end
 end
 
 end
