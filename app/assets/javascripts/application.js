@@ -87,21 +87,61 @@ $(document).ready(function() {
     });
   })
 
-// New post form on posts/index
-  // $('form#new_post').submit(function(event) {
-    // enter has keyCode = 13, change it if you want to use another button
-    // event.preventDefault()
-    // var info = $('input#post_body.validate.valid').val()
-    // $.ajax({
-    //   type: "POST",
-    //   url: '/posts',
-    //   data: info,
-    //   success: success,
-    //   error: debugger,
-      // dataType: dataType
-    // });
-    
-  // });
+  //Creates New Post using AJAX request
+  $("#new_post").on( "submit", function( event ) {
+    event.preventDefault();
+    data = $(this).serialize();
+    $.ajax({
+      url: '/posts',
+      type: 'post',
+      data: data,
+      cache: false,
+    }).done(function(server_data){
+      console.log("success: " + server_data);
+      //Prepends the new post to the post feed, uses ES6
+      $("#post_feed").prepend(
+        `
+        <div id="effects" class="posts col-md-12">                                  
+            <a href="/posts/${server_data.id}">
+              <div>
+                <div class="edit-icons">        
+                  <a class="highlight" data-method="get" href="/posts/${server_data.id}/edit">
+                    <i class="material-icons edit-icon">edit_mode</i>
+                  </a>
+                  <a class="highlight" data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/19">
+                    <i class="highlight material-icons edit-icon delete-icon">delete</i>
+                  </a>            
+                </div>
+                <div id="img-post" class="row">
+                  <div id="img-in-post" class="">
+                    <span style="padding-right: 10px;">
+                      <img class="avatar" src="https://logo.clearbit.com/${server_data.img_url}/?size='50x50'">
+                    </span>
+                  </div>              
+                  <div id="text-post" class="">
+                    <h3 class="card-title"><a class="highlight" href="/posts/${server_data.id}">${server_data.body}</a></h3>
+                    <span class="card-text post-text"><a class="highlight" href="/groups/1">${server_data.university}</a></span><br>    
+                  </div>              
+                </div>             
+            
+                <hr>
+          
+                <div id="social">
+                  <a class="waves-effect social-btn waves-light blue btn" rel="nofollow" data-method="put" href="/posts/${server_data.id}/like">
+                    <i class="material-icons left">favorite</i>0
+                  </a>            
+                </div>
+
+              </div>                  
+          </a>        
+        </div>
+        `
+      );
+    }).fail(function(jqXHR, textStatus, errorThrown){
+      console.log("fail: " + errorThrown);
+      return "There was an issue with your request please try again.";;
+    });
+  });
 
 
   // if ($('#wrapper').hasClass('toggled')){
