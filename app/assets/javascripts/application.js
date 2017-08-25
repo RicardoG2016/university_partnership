@@ -98,6 +98,8 @@ $(document).ready(function() {
       cache: false,
     }).done(function(server_data){
       console.log("success: " + server_data);
+      $("#new_post_input").val("")
+      $("#new_post_input").blur()
       //Prepends the new post to the post feed, uses ES6
       $("#post_feed").prepend(
         `
