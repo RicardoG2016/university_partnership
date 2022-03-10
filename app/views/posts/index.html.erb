@@ -10,7 +10,7 @@
               <div class="row">
                 <div class="form-inputs input-field col s6">          
                   <label data-error="wrong" data-success="right">Create a new post...</label>
-                  <%= p.text_field :body, :type => "text", :class => "validate" %>
+                  <%= p.text_field :body, :type => "text", :class => "validate", :id => "new_post_input" %>
                 </div>
               </div>
               <% p.submit "", name: nil, class: "new_post submit-on-enter" %>
@@ -18,6 +18,7 @@
         </div>
       </div>
       <br>
+      <div id="post_feed">
       <% @post.each do |p| %>  
         <div id="effects" class="posts col-md-12">                                  
         <%= link_to post_path(p) do %>
@@ -74,6 +75,7 @@
     <% else %>
       <p>No Posts yet </p>
     <% end %>
+    </div>
   </div>
 
   <div id="side-feed" class="col-md-5 text-muted">

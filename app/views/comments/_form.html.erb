@@ -1,4 +1,4 @@
-<div class="comment-area materialize-textarea">
+<div id="comment_form" class="comment-area materialize-textarea">
   <%= simple_form_for([@post, @post.comments.build]) do |f| %>
     <%= f.input :content, label: "Add Comment", class: "label comment-label" %>
     <br>
